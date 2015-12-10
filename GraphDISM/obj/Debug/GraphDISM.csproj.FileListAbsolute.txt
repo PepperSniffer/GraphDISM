@@ -1,0 +1,10 @@
+D:\Programing\Visual Studio\GraphDISM\GraphDISM\bin\Debug\GraphDISM.exe.config
+D:\Programing\Visual Studio\GraphDISM\GraphDISM\bin\Debug\GraphDISM.exe
+D:\Programing\Visual Studio\GraphDISM\GraphDISM\bin\Debug\GraphDISM.pdb
+D:\Programing\Visual Studio\GraphDISM\GraphDISM\obj\Debug\GraphDISM.csprojResolveAssemblyReference.cache
+D:\Programing\Visual Studio\GraphDISM\GraphDISM\obj\Debug\GraphDISM.Properties.Resources.resources
+D:\Programing\Visual Studio\GraphDISM\GraphDISM\obj\Debug\GraphDISM.csproj.GenerateResource.Cache
+D:\Programing\Visual Studio\GraphDISM\GraphDISM\obj\Debug\GraphDISM.exe
+D:\Programing\Visual Studio\GraphDISM\GraphDISM\obj\Debug\GraphDISM.pdb
+D:\Programing\Visual Studio\GraphDISM\GraphDISM\obj\Debug\GraphDISM.GraphDismMain.resources
+D:\Programing\Visual Studio\GraphDISM\GraphDISM\obj\Debug\GraphDISM.FormInfoExt.resources
