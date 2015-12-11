@@ -41,7 +41,7 @@
             this.chkCheckIntegrityUnmount = new System.Windows.Forms.CheckBox();
             this.chkCommitUnmount = new System.Windows.Forms.CheckBox();
             this.btnUnmout = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnMount = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.chkCheckIntegrityMount = new System.Windows.Forms.CheckBox();
             this.chkOptimizeMount = new System.Windows.Forms.CheckBox();
@@ -167,6 +167,7 @@
             // 
             this.btnGetInfo.Location = new System.Drawing.Point(577, 48);
             this.btnGetInfo.Name = "btnGetInfo";
+            this.btnGetInfo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnGetInfo.Size = new System.Drawing.Size(98, 82);
             this.btnGetInfo.TabIndex = 1;
             this.btnGetInfo.Text = "Obtenir Information WIM/SWM";
@@ -179,7 +180,7 @@
             this.mount.Controls.Add(this.chkCheckIntegrityUnmount);
             this.mount.Controls.Add(this.chkCommitUnmount);
             this.mount.Controls.Add(this.btnUnmout);
-            this.mount.Controls.Add(this.button1);
+            this.mount.Controls.Add(this.btnMount);
             this.mount.Controls.Add(this.label18);
             this.mount.Controls.Add(this.chkCheckIntegrityMount);
             this.mount.Controls.Add(this.chkOptimizeMount);
@@ -238,15 +239,15 @@
             this.btnUnmout.UseVisualStyleBackColor = true;
             this.btnUnmout.Click += new System.EventHandler(this.btnUnmout_Click);
             // 
-            // button1
+            // btnMount
             // 
-            this.button1.Location = new System.Drawing.Point(577, 48);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 82);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Monter";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnMount.Location = new System.Drawing.Point(577, 48);
+            this.btnMount.Name = "btnMount";
+            this.btnMount.Size = new System.Drawing.Size(98, 82);
+            this.btnMount.TabIndex = 18;
+            this.btnMount.Text = "Monter";
+            this.btnMount.UseVisualStyleBackColor = true;
+            this.btnMount.Click += new System.EventHandler(this.button1_Click);
             // 
             // label18
             // 
@@ -819,7 +820,7 @@
         private System.Windows.Forms.CheckBox chkReadOnlyMout;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnMount;
         private System.Windows.Forms.CheckBox chkAppendUnmount;
         private System.Windows.Forms.CheckBox chkCheckIntegrityUnmount;
         private System.Windows.Forms.CheckBox chkCommitUnmount;

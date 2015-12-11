@@ -15,13 +15,49 @@ namespace GraphDISM
     public partial class GraphDismMain : Form
     {
         int compt = 0;
-
+        /// <summary>
+        /// Programme de gestion graphique de l'outil en ligne de commande Micrsoft DISM
+        /// </summary>
         public GraphDismMain()
         {
             InitializeComponent();
             
             txtOutput.Text = "GraphDISM By Jules GROSPEILLER";
             cmbCompress.SelectedIndex = 0;
+
+            System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(this.btnResetOutput, "Remet l'affichage des resultats des operations à zero");
+            ToolTip1.SetToolTip(this.btnGetInfo, "Permet d'afficher les informations de l'image séléctionnée");
+            ToolTip1.SetToolTip(this.txtPathInfo, "Chemin de l'image");
+            ToolTip1.SetToolTip(this.btnOpenFileInfo, "Permet de selectionner l'image");
+            ToolTip1.SetToolTip(this.chkOpenNewFormInfo, "Ouvre les informations dans une nouvelle fenêtre ");
+            ToolTip1.SetToolTip(this.btnOpenWimMount, "Permet de selectionner l'image");
+            ToolTip1.SetToolTip(this.btnExport, "Exporte l'image séléctionnée avec les options cochées");
+            ToolTip1.SetToolTip(this.btnOpenSplit, "Permet de selectionner l'image");
+            ToolTip1.SetToolTip(this.cbbMoutIndex, "Permet de selectionner l'index à monter");
+            ToolTip1.SetToolTip(this.btnMountTo, "Permet de selectionner le repertoire où monter l'image \nSelectionne l'endroit de l'image montée pour la demonter");
+            ToolTip1.SetToolTip(this.btnUnmout, "Demonte l'image avec les options cochées plus bas");
+            ToolTip1.SetToolTip(this.btnMount, "Monte l'image avec les options cochées plus bas");
+            ToolTip1.SetToolTip(this.chkCheckIntegrityMount, "Verifie l'integritée des fichiers lors du montage");
+            ToolTip1.SetToolTip(this.chkCheckIntegrityUnmount, "Verifie l'integritée des fichiers lors du demontage");
+            ToolTip1.SetToolTip(this.chkBoot, "Ajoute l'option bootable à l'image");
+            ToolTip1.SetToolTip(this.chkCommitUnmount, "Applique les changements lors du demontage de l'image");
+            ToolTip1.SetToolTip(this.chkOptimizeMount, "Monte l'image en même temps que l'on y accede processus cours mais accès au repertoire plus long");
+            ToolTip1.SetToolTip(this.chkReadOnlyMout, "Applique la propriété de lecture seules au fichiers montés");
+            ToolTip1.SetToolTip(this.chkVerifyExport, "Verifie l'integritée des fichiers lors de l'export");
+            ToolTip1.SetToolTip(this.chkAppendUnmount, "Ajoute l'image montée comme un nouvel index au lieu de remplacer le précédent");
+            ToolTip1.SetToolTip(this.chkVerifySplit, "Verifie l'integritée des fichiers lors du split");
+            ToolTip1.SetToolTip(this.btnExportTo, "Permet de selectionner l'emplacement vers laquelle exporter");
+            ToolTip1.SetToolTip(this.btnOpenWimExp, "Permet de selectionner l'image à exporter");
+            ToolTip1.SetToolTip(this.btnSplit, "Split l'image selectionnée vers la destination selectionnée avec les option cochées");
+            ToolTip1.SetToolTip(this.btnSplitTo, "Permet de selectionner la destination des fichiers images decoupés");
+            ToolTip1.SetToolTip(this.cmbCompress, "Permet de choisir le mode de compression de l'image (Rapide par default)");
+            ToolTip1.SetToolTip(this.numIndex, "Permet de selectionner l'index à exporter");
+            ToolTip1.SetToolTip(this.txtSizeSplit, "Taille des fichiers SWM une fois splités 4096 Mo par default pour compatibilité avec FAT32");
+
+
+
+
         }
         
         /// <summary>
@@ -45,7 +81,7 @@ namespace GraphDISM
         /// <param name="e"></param>
         private void btnGetInfo_Click(object sender, EventArgs e)
         {
-            string command = "DISM /Get-WimInfo /wimfile:", arguments = "";
+             string command = "DISM /Get-WimInfo /wimfile:", arguments = "";
 
 
             arguments = txtPathInfo.Text;
