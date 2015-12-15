@@ -37,6 +37,7 @@
             this.btnOpenFileInfo = new System.Windows.Forms.Button();
             this.btnGetInfo = new System.Windows.Forms.Button();
             this.mount = new System.Windows.Forms.TabPage();
+            this.btnCleanupMount = new System.Windows.Forms.Button();
             this.chkAppendUnmount = new System.Windows.Forms.CheckBox();
             this.chkCheckIntegrityUnmount = new System.Windows.Forms.CheckBox();
             this.chkCommitUnmount = new System.Windows.Forms.CheckBox();
@@ -80,6 +81,12 @@
             this.txtOpenSplit = new System.Windows.Forms.TextBox();
             this.btnSplitTo = new System.Windows.Forms.Button();
             this.btnOpenSplit = new System.Windows.Forms.Button();
+            this.addPackage = new System.Windows.Forms.TabPage();
+            this.btnAddPackage = new System.Windows.Forms.Button();
+            this.btnChoosePackages = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtFolderPathPackage = new System.Windows.Forms.TextBox();
+            this.btnPackagesTo = new System.Windows.Forms.Button();
             this.about = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -96,6 +103,7 @@
             this.Exporter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numIndex)).BeginInit();
             this.Splitter.SuspendLayout();
+            this.addPackage.SuspendLayout();
             this.about.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,6 +113,7 @@
             this.tabControl1.Controls.Add(this.mount);
             this.tabControl1.Controls.Add(this.Exporter);
             this.tabControl1.Controls.Add(this.Splitter);
+            this.tabControl1.Controls.Add(this.addPackage);
             this.tabControl1.Controls.Add(this.about);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
@@ -176,6 +185,7 @@
             // 
             // mount
             // 
+            this.mount.Controls.Add(this.btnCleanupMount);
             this.mount.Controls.Add(this.chkAppendUnmount);
             this.mount.Controls.Add(this.chkCheckIntegrityUnmount);
             this.mount.Controls.Add(this.chkCommitUnmount);
@@ -198,6 +208,16 @@
             this.mount.TabIndex = 5;
             this.mount.Text = "Monter";
             this.mount.UseVisualStyleBackColor = true;
+            // 
+            // btnCleanupMount
+            // 
+            this.btnCleanupMount.Location = new System.Drawing.Point(25, 205);
+            this.btnCleanupMount.Name = "btnCleanupMount";
+            this.btnCleanupMount.Size = new System.Drawing.Size(143, 55);
+            this.btnCleanupMount.TabIndex = 23;
+            this.btnCleanupMount.Text = "Nettoyer les points de montages";
+            this.btnCleanupMount.UseVisualStyleBackColor = true;
+            this.btnCleanupMount.Click += new System.EventHandler(this.btnCleanupMount_Click);
             // 
             // chkAppendUnmount
             // 
@@ -642,6 +662,66 @@
             this.btnOpenSplit.UseVisualStyleBackColor = true;
             this.btnOpenSplit.Click += new System.EventHandler(this.btnOpenSplit_Click);
             // 
+            // addPackage
+            // 
+            this.addPackage.Controls.Add(this.btnAddPackage);
+            this.addPackage.Controls.Add(this.btnChoosePackages);
+            this.addPackage.Controls.Add(this.label20);
+            this.addPackage.Controls.Add(this.txtFolderPathPackage);
+            this.addPackage.Controls.Add(this.btnPackagesTo);
+            this.addPackage.Location = new System.Drawing.Point(4, 22);
+            this.addPackage.Name = "addPackage";
+            this.addPackage.Size = new System.Drawing.Size(711, 319);
+            this.addPackage.TabIndex = 6;
+            this.addPackage.Text = "Ajouter Package";
+            this.addPackage.UseVisualStyleBackColor = true;
+            // 
+            // btnAddPackage
+            // 
+            this.btnAddPackage.Location = new System.Drawing.Point(577, 48);
+            this.btnAddPackage.Name = "btnAddPackage";
+            this.btnAddPackage.Size = new System.Drawing.Size(98, 82);
+            this.btnAddPackage.TabIndex = 18;
+            this.btnAddPackage.Text = "Ajouter le(s) Package(s)";
+            this.btnAddPackage.UseVisualStyleBackColor = true;
+            this.btnAddPackage.Click += new System.EventHandler(this.btnAddPackage_Click);
+            // 
+            // btnChoosePackages
+            // 
+            this.btnChoosePackages.Location = new System.Drawing.Point(6, 47);
+            this.btnChoosePackages.Name = "btnChoosePackages";
+            this.btnChoosePackages.Size = new System.Drawing.Size(120, 23);
+            this.btnChoosePackages.TabIndex = 17;
+            this.btnChoosePackages.Text = "Choisir Package(s)";
+            this.btnChoosePackages.UseVisualStyleBackColor = true;
+            this.btnChoosePackages.Click += new System.EventHandler(this.btnChoosePackages_Click);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(66, 110);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(60, 13);
+            this.label20.TabIndex = 16;
+            this.label20.Text = "Destination";
+            // 
+            // txtFolderPathPackage
+            // 
+            this.txtFolderPathPackage.Location = new System.Drawing.Point(132, 128);
+            this.txtFolderPathPackage.Name = "txtFolderPathPackage";
+            this.txtFolderPathPackage.Size = new System.Drawing.Size(293, 20);
+            this.txtFolderPathPackage.TabIndex = 15;
+            // 
+            // btnPackagesTo
+            // 
+            this.btnPackagesTo.Location = new System.Drawing.Point(6, 126);
+            this.btnPackagesTo.Name = "btnPackagesTo";
+            this.btnPackagesTo.Size = new System.Drawing.Size(120, 23);
+            this.btnPackagesTo.TabIndex = 14;
+            this.btnPackagesTo.Text = "Dossier de destination";
+            this.btnPackagesTo.UseVisualStyleBackColor = true;
+            this.btnPackagesTo.Click += new System.EventHandler(this.btnPackagesTo_Click);
+            // 
             // about
             // 
             this.about.BackColor = System.Drawing.Color.DarkGray;
@@ -672,9 +752,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(3, 262);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 13);
+            this.label6.Size = new System.Drawing.Size(60, 13);
             this.label6.TabIndex = 4;
-            this.label6.Text = "Version 0.2.5";
+            this.label6.Text = "Version 0.3";
             // 
             // label5
             // 
@@ -756,6 +836,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numIndex)).EndInit();
             this.Splitter.ResumeLayout(false);
             this.Splitter.PerformLayout();
+            this.addPackage.ResumeLayout(false);
+            this.addPackage.PerformLayout();
             this.about.ResumeLayout(false);
             this.about.PerformLayout();
             this.ResumeLayout(false);
@@ -825,6 +907,13 @@
         private System.Windows.Forms.CheckBox chkCheckIntegrityUnmount;
         private System.Windows.Forms.CheckBox chkCommitUnmount;
         private System.Windows.Forms.Button btnUnmout;
+        private System.Windows.Forms.TabPage addPackage;
+        private System.Windows.Forms.Button btnChoosePackages;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox txtFolderPathPackage;
+        private System.Windows.Forms.Button btnPackagesTo;
+        private System.Windows.Forms.Button btnAddPackage;
+        private System.Windows.Forms.Button btnCleanupMount;
     }
 }
 

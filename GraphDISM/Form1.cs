@@ -15,13 +15,14 @@ namespace GraphDISM
     public partial class GraphDismMain : Form
     {
         int compt = 0;
+        string multiplePackages = "";
         /// <summary>
         /// Programme de gestion graphique de l'outil en ligne de commande Micrsoft DISM
         /// </summary>
         public GraphDismMain()
         {
             InitializeComponent();
-            
+
             txtOutput.Text = "GraphDISM By Jules GROSPEILLER";
             cmbCompress.SelectedIndex = 0;
 
@@ -36,7 +37,7 @@ namespace GraphDISM
             ToolTip1.SetToolTip(this.btnOpenSplit, "Permet de selectionner l'image");
             ToolTip1.SetToolTip(this.cbbMoutIndex, "Permet de selectionner l'index à monter");
             ToolTip1.SetToolTip(this.btnMountTo, "Permet de selectionner le repertoire où monter l'image \nSelectionne l'endroit de l'image montée pour la demonter");
-            ToolTip1.SetToolTip(this.btnUnmout, "Demonte l'image avec les options cochées plus bas");
+            ToolTip1.SetToolTip(this.btnUnmout, "Demonte l'image du dossier selectionné avec les options cochées plus bas");
             ToolTip1.SetToolTip(this.btnMount, "Monte l'image avec les options cochées plus bas");
             ToolTip1.SetToolTip(this.chkCheckIntegrityMount, "Verifie l'integritée des fichiers lors du montage");
             ToolTip1.SetToolTip(this.chkCheckIntegrityUnmount, "Verifie l'integritée des fichiers lors du demontage");
@@ -54,12 +55,17 @@ namespace GraphDISM
             ToolTip1.SetToolTip(this.cmbCompress, "Permet de choisir le mode de compression de l'image (Rapide par default)");
             ToolTip1.SetToolTip(this.numIndex, "Permet de selectionner l'index à exporter");
             ToolTip1.SetToolTip(this.txtSizeSplit, "Taille des fichiers SWM une fois splités 4096 Mo par default pour compatibilité avec FAT32");
+            ToolTip1.SetToolTip(this.btnChoosePackages, "Permet de selectionner un ou plusieurs packages windows updates ou autre à ajouter");
+            ToolTip1.SetToolTip(this.btnPackagesTo, "Selectionne  le dossier de l'image montée soit la destination des packages séléctionnés");
+            ToolTip1.SetToolTip(this.btnAddPackage, "Execute la commande d'ajouts de packages");
+            ToolTip1.SetToolTip(this.btnCleanupMount, "Execute la commande de nettoyage de points de montage \nCela vous permet de supprimer manuellement les dossiers montés \nMais vous empeche de les demonter");
+
 
 
 
 
         }
-        
+
         /// <summary>
         /// Selectionne l'image pour les informations
         /// </summary>
@@ -81,7 +87,7 @@ namespace GraphDISM
         /// <param name="e"></param>
         private void btnGetInfo_Click(object sender, EventArgs e)
         {
-             string command = "DISM /Get-WimInfo /wimfile:", arguments = "";
+            string command = "DISM /Get-WimInfo /wimfile:", arguments = "";
 
 
             arguments = txtPathInfo.Text;
@@ -102,7 +108,7 @@ namespace GraphDISM
 
             if (outputTemp.Contains("Erreur : "))
                 MessageBox.Show("Attention une erreure s'est produite", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            
+
             else
             {
                 if (chkOpenNewFormInfo.Checked)
@@ -114,7 +120,7 @@ namespace GraphDISM
                 else
                     MessageBox.Show("Commande réalisée\nVoir resultat", "GraphDISM");
             }
-            
+
 
         }
         /// <summary>
@@ -150,7 +156,7 @@ namespace GraphDISM
                 txtExportFrom.Text = ofdWimExport.FileName;
             }
         }
-                       
+
         /// <summary>
         /// Execute la commande DISM pour exporter les images selectionnees
         /// </summary>
@@ -158,8 +164,8 @@ namespace GraphDISM
         /// <param name="e"></param>
         private void btnExport_Click(object sender, EventArgs e)
         {
-            string  command = "DISM /Export-Image /SourceImageFile:", source = "", index = "", destination = "";
-            
+            string command = "DISM /Export-Image /SourceImageFile:", source = "", index = "", destination = "";
+
             destination = txtExportTo.Text;
             source = txtExportFrom.Text;
             index = numIndex.Text;
@@ -187,14 +193,14 @@ namespace GraphDISM
             var proc = Process.Start(wimExport);
             proc.StandardInput.WriteLine(@command);
             proc.StandardInput.WriteLine("exit");
-            
+
             string outputTemp = proc.StandardOutput.ReadToEnd();
             txtOutput.Text = outputTemp;
             if (outputTemp.Contains("Erreur : "))
-                MessageBox.Show("Attention une erreure s'est produite","Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Attention une erreure s'est produite", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
-                MessageBox.Show("Commande réalisée\nVoir resultat","GraphDISM" );
-            
+                MessageBox.Show("Commande réalisée\nVoir resultat", "GraphDISM");
+
 
         }
         /// <summary>
@@ -206,7 +212,7 @@ namespace GraphDISM
         {
             txtOutput.Text = "GraphDISM By Jules GROSPEILLER";
             compt++;
-            if (compt >=10)
+            if (compt >= 10)
                 txtOutput.Text = "Ceci n'est pas un Easter Egg";
 
         }
@@ -233,9 +239,9 @@ namespace GraphDISM
         private void btnSplitTo_Click(object sender, EventArgs e)
         {
             SaveFileDialog sfdSplitTo = new SaveFileDialog();
-            sfdSplitTo.Filter = "Fichier SWM(*.swm) | *.swm" ;
+            sfdSplitTo.Filter = "Fichier SWM(*.swm) | *.swm";
             sfdSplitTo.Title = "Splitter vers ...";
-            
+
             if (sfdSplitTo.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 txtSplitTo.Text = sfdSplitTo.FileName;
@@ -253,9 +259,9 @@ namespace GraphDISM
             destination = txtSplitTo.Text;
             source = txtOpenSplit.Text;
             size = txtSizeSplit.Text;
-            command = (command + "\"" + source + "\"" + " /SWMFile:\"" + destination + "\""+ " /FileSize:\"" + size + "\"");
+            command = (command + "\"" + source + "\"" + " /SWMFile:\"" + destination + "\"" + " /FileSize:\"" + size + "\"");
 
-            
+
             if (chkVerifySplit.Checked)
                 command = command + " /CheckIntegrity";
 
@@ -276,7 +282,7 @@ namespace GraphDISM
                 MessageBox.Show("Attention une erreure s'est produite", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
                 MessageBox.Show("Commande réalisée\nVoir resultat", "GraphDISM");
-            
+
         }
         /// <summary>
         /// Selectionne l'image source pour Monter 
@@ -299,7 +305,7 @@ namespace GraphDISM
         /// <param name="e"></param>
         private void btnMountTo_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog fbdMoutTo = new FolderBrowserDialog() ;
+            FolderBrowserDialog fbdMoutTo = new FolderBrowserDialog();
             fbdMoutTo.Description = "Selectionnez le repertoire où monter l'image";
             if (fbdMoutTo.ShowDialog() == DialogResult.OK)
                 txtMountTo.Text = fbdMoutTo.SelectedPath;
@@ -382,6 +388,83 @@ namespace GraphDISM
                 MessageBox.Show("Attention une erreure s'est produite", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
                 MessageBox.Show("Commande réalisée\nVoir resultat", "GraphDISM");
-        }   
+        }
+
+        private void btnChoosePackages_Click(object sender, EventArgs e)
+        {
+            multiplePackages = "";
+            OpenFileDialog ofdAddPackage = new OpenFileDialog();
+            ofdAddPackage.Filter = "Fichier CAB (*.cab)|*.cab|Tout fichiers (*.*)|*.*";
+            ofdAddPackage.Multiselect = true;
+            if (ofdAddPackage.ShowDialog() == DialogResult.OK)
+            {
+                string[] result = ofdAddPackage.FileNames;
+                foreach (string file in result)
+                {
+                    multiplePackages += " /PackagePath:\"" + file + "\"";
+                }
+            }
+        }
+
+        private void btnAddPackage_Click(object sender, EventArgs e)
+        {
+            string command = "DISM /Image:\"", mountDir;
+            mountDir = txtFolderPathPackage.Text;
+            command = (command + mountDir + "\" /Add-Package" + multiplePackages);
+
+            ProcessStartInfo wimUnmount = new ProcessStartInfo("cmd");
+            wimUnmount.UseShellExecute = false;
+            wimUnmount.RedirectStandardOutput = true;
+            wimUnmount.CreateNoWindow = true;
+            wimUnmount.RedirectStandardInput = true;
+            wimUnmount.StandardOutputEncoding = Encoding.GetEncoding(850);
+
+            var proc = Process.Start(wimUnmount);
+            proc.StandardInput.WriteLine(@command);
+            proc.StandardInput.WriteLine("exit");
+
+            string outputTemp = proc.StandardOutput.ReadToEnd();
+            txtOutput.Text = outputTemp;
+            if (outputTemp.Contains("Erreur : "))
+                MessageBox.Show("Attention une erreure s'est produite", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+                MessageBox.Show("Commande réalisée\nVoir resultat", "GraphDISM");
+            
+        }
+
+        private void btnPackagesTo_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fdbMountedRep = new FolderBrowserDialog();
+            fdbMountedRep.Description = "Selectionnez le repertoire l'image est montée";
+            if (fdbMountedRep.ShowDialog() == DialogResult.OK)
+                txtFolderPathPackage.Text = fdbMountedRep.SelectedPath;
+        }
+
+        private void btnCleanupMount_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Attention vous êtes sur le point de nettoyer les points de montages de vos images. Après cette action vos images montées ne seronts plus demontables\nVoulez-vous continuer ?", "Attention !", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                string command = "DISM /Cleanup-Mountpoints";
+                
+                ProcessStartInfo wimUnmount = new ProcessStartInfo("cmd");
+                wimUnmount.UseShellExecute = false;
+                wimUnmount.RedirectStandardOutput = true;
+                wimUnmount.CreateNoWindow = true;
+                wimUnmount.RedirectStandardInput = true;
+                wimUnmount.StandardOutputEncoding = Encoding.GetEncoding(850);
+
+                var proc = Process.Start(wimUnmount);
+                proc.StandardInput.WriteLine(@command);
+                proc.StandardInput.WriteLine("exit");
+
+                string outputTemp = proc.StandardOutput.ReadToEnd();
+                txtOutput.Text = outputTemp;
+                if (outputTemp.Contains("Erreur : "))
+                    MessageBox.Show("Attention une erreure s'est produite", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                    MessageBox.Show("Commande réalisée\nVoir resultat", "GraphDISM");
+            }
+        }
     }
 }
