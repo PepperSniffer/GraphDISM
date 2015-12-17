@@ -16,6 +16,7 @@ namespace GraphDISM
     {
         int compt = 0;
         string multiplePackages = "";
+        
         /// <summary>
         /// Programme de gestion graphique de l'outil en ligne de commande Micrsoft DISM
         /// </summary>
@@ -65,6 +66,37 @@ namespace GraphDISM
 
 
         }
+        public static string DISM(string command)
+        {
+            
+            string file = "dism";
+            if (File.Exists(@"C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\amd64\DISM\dism.exe"))
+            {
+                file = @"C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\amd64\DISM\dism.exe";
+            }
+            else
+            {
+                if (File.Exists(@"C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\x86\DISM\dism.exe"))
+                {
+                    file = @"C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\x86\DISM\dism.exe";
+                }
+            }
+            ProcessStartInfo dismExec = new ProcessStartInfo(file);
+            dismExec.Arguments = command;
+            dismExec.UseShellExecute = false;
+            dismExec.RedirectStandardOutput = true;
+            dismExec.CreateNoWindow = true;
+            dismExec.RedirectStandardInput = true;
+            dismExec.StandardOutputEncoding = Encoding.GetEncoding(850);
+
+
+            var proc = Process.Start(dismExec);
+
+            string outputTemp = "***********Commande éxécutée : " + command + proc.StandardOutput.ReadToEnd();
+            
+            
+            return outputTemp;
+        }
 
         /// <summary>
         /// Selectionne l'image pour les informations
@@ -87,39 +119,28 @@ namespace GraphDISM
         /// <param name="e"></param>
         private void btnGetInfo_Click(object sender, EventArgs e)
         {
-            string command = "DISM /Get-WimInfo /wimfile:", arguments = "";
+            string command = "/Get-WimInfo /wimfile:", arguments = "", output;
 
 
             arguments = txtPathInfo.Text;
             command = (command + "\"" + arguments + "\"");
-            ProcessStartInfo wimInfo = new ProcessStartInfo("cmd");
-            wimInfo.UseShellExecute = false;
-            wimInfo.RedirectStandardOutput = true;
-            wimInfo.CreateNoWindow = true;
-            wimInfo.RedirectStandardInput = true;
-            wimInfo.StandardOutputEncoding = Encoding.GetEncoding(850);
 
-            var proc = Process.Start(wimInfo);
-            proc.StandardInput.WriteLine(@command);
-            proc.StandardInput.WriteLine("exit");
+            output = DISM(command);
+            txtOutput.Text = output;
 
-            string outputTemp = proc.StandardOutput.ReadToEnd();
-            txtOutput.Text = outputTemp;
-
-            if (outputTemp.Contains("Erreur : "))
+            if (output.Contains("Erreur : "))
                 MessageBox.Show("Attention une erreure s'est produite", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             else
-            {
-                if (chkOpenNewFormInfo.Checked)
-                {
+                MessageBox.Show("Commande réalisée\nVoir resultat", "GraphDISM");
 
-                    Form FormInfoExt = new FormInfoExt(outputTemp);
-                    FormInfoExt.Show();
-                }
-                else
-                    MessageBox.Show("Commande réalisée\nVoir resultat", "GraphDISM");
+
+            if (chkOpenNewFormInfo.Checked)
+            {
+
+                Form FormInfoExt = new FormInfoExt(output);
+                FormInfoExt.Show();
             }
+            
 
 
         }
@@ -164,7 +185,7 @@ namespace GraphDISM
         /// <param name="e"></param>
         private void btnExport_Click(object sender, EventArgs e)
         {
-            string command = "DISM /Export-Image /SourceImageFile:", source = "", index = "", destination = "";
+            string command = "/Export-Image /SourceImageFile:", source = "", index = "", destination = "",output;
 
             destination = txtExportTo.Text;
             source = txtExportFrom.Text;
@@ -182,21 +203,10 @@ namespace GraphDISM
             if (chkBoot.Checked)
                 command = command + " /Bootable";
 
-            ProcessStartInfo wimExport = new ProcessStartInfo("cmd");
-            wimExport.UseShellExecute = false;
-            wimExport.RedirectStandardOutput = true;
-            wimExport.CreateNoWindow = true;
-            wimExport.RedirectStandardInput = true;
-            wimExport.StandardOutputEncoding = Encoding.GetEncoding(850);
+            output = DISM(command);
+            txtOutput.Text = output;
 
-
-            var proc = Process.Start(wimExport);
-            proc.StandardInput.WriteLine(@command);
-            proc.StandardInput.WriteLine("exit");
-
-            string outputTemp = proc.StandardOutput.ReadToEnd();
-            txtOutput.Text = outputTemp;
-            if (outputTemp.Contains("Erreur : "))
+            if (output.Contains("Erreur : "))
                 MessageBox.Show("Attention une erreure s'est produite", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
                 MessageBox.Show("Commande réalisée\nVoir resultat", "GraphDISM");
@@ -254,7 +264,7 @@ namespace GraphDISM
         /// <param name="e"></param>
         private void btnSplit_Click(object sender, EventArgs e)
         {
-            string command = "DISM /Split-Image /ImageFile:", source = "", size = "", destination = "";
+            string command = "/Split-Image /ImageFile:", source = "", size = "", destination = "",output;
 
             destination = txtSplitTo.Text;
             source = txtOpenSplit.Text;
@@ -265,20 +275,10 @@ namespace GraphDISM
             if (chkVerifySplit.Checked)
                 command = command + " /CheckIntegrity";
 
-            ProcessStartInfo wimExport = new ProcessStartInfo("cmd");
-            wimExport.UseShellExecute = false;
-            wimExport.RedirectStandardOutput = true;
-            wimExport.CreateNoWindow = true;
-            wimExport.RedirectStandardInput = true;
-            wimExport.StandardOutputEncoding = Encoding.GetEncoding(850);
+            output = DISM(command);
+            txtOutput.Text = output;
 
-            var proc = Process.Start(wimExport);
-            proc.StandardInput.WriteLine(@command);
-            proc.StandardInput.WriteLine("exit");
-
-            string outputTemp = proc.StandardOutput.ReadToEnd();
-            txtOutput.Text = outputTemp;
-            if (outputTemp.Contains("Erreur : "))
+            if (output.Contains("Erreur : "))
                 MessageBox.Show("Attention une erreure s'est produite", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
                 MessageBox.Show("Commande réalisée\nVoir resultat", "GraphDISM");
@@ -317,7 +317,7 @@ namespace GraphDISM
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-            string command = "DISM /Mount-Image /ImageFile:", source = "", index = "", destination = "";
+            string command = "/Mount-Image /ImageFile:", source = "", index = "", destination = "",output;
 
             destination = txtMountTo.Text;
             source = txtMountFrom.Text;
@@ -332,20 +332,10 @@ namespace GraphDISM
             if (chkCheckIntegrityMount.Checked)
                 command += " /CheckIntegrity";
 
-            ProcessStartInfo wimMount = new ProcessStartInfo("cmd");
-            wimMount.UseShellExecute = false;
-            wimMount.RedirectStandardOutput = true;
-            wimMount.CreateNoWindow = true;
-            wimMount.RedirectStandardInput = true;
-            wimMount.StandardOutputEncoding = Encoding.GetEncoding(850);
+            output = DISM(command);
+            txtOutput.Text = output;
 
-            var proc = Process.Start(wimMount);
-            proc.StandardInput.WriteLine(@command);
-            proc.StandardInput.WriteLine("exit");
-
-            string outputTemp = proc.StandardOutput.ReadToEnd();
-            txtOutput.Text = outputTemp;
-            if (outputTemp.Contains("Erreur : "))
+            if (output.Contains("Erreur : "))
                 MessageBox.Show("Attention une erreure s'est produite", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
                 MessageBox.Show("Commande réalisée\nVoir resultat", "GraphDISM");
@@ -353,7 +343,7 @@ namespace GraphDISM
 
         private void btnUnmout_Click(object sender, EventArgs e)
         {
-            string command = "DISM /Unmount-Image /MountDir:", mountDir = "";
+            string command = "/Unmount-Image /MountDir:", mountDir = "",output;
             mountDir = txtMountTo.Text;
             command = (command + "\"" + mountDir + "\"");
 
@@ -371,20 +361,10 @@ namespace GraphDISM
             if (chkAppendUnmount.Checked)
                 command += " /Append";
 
-            ProcessStartInfo wimUnmount = new ProcessStartInfo("cmd");
-            wimUnmount.UseShellExecute = false;
-            wimUnmount.RedirectStandardOutput = true;
-            wimUnmount.CreateNoWindow = true;
-            wimUnmount.RedirectStandardInput = true;
-            wimUnmount.StandardOutputEncoding = Encoding.GetEncoding(850);
+            output = DISM(command);
+            txtOutput.Text = output;
 
-            var proc = Process.Start(wimUnmount);
-            proc.StandardInput.WriteLine(@command);
-            proc.StandardInput.WriteLine("exit");
-
-            string outputTemp = proc.StandardOutput.ReadToEnd();
-            txtOutput.Text = outputTemp;
-            if (outputTemp.Contains("Erreur : "))
+            if (output.Contains("Erreur : "))
                 MessageBox.Show("Attention une erreure s'est produite", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
                 MessageBox.Show("Commande réalisée\nVoir resultat", "GraphDISM");
@@ -408,28 +388,18 @@ namespace GraphDISM
 
         private void btnAddPackage_Click(object sender, EventArgs e)
         {
-            string command = "DISM /Image:\"", mountDir;
+            string command = "/Image:\"", mountDir , output;
             mountDir = txtFolderPathPackage.Text;
             command = (command + mountDir + "\" /Add-Package" + multiplePackages);
 
-            ProcessStartInfo wimUnmount = new ProcessStartInfo("cmd");
-            wimUnmount.UseShellExecute = false;
-            wimUnmount.RedirectStandardOutput = true;
-            wimUnmount.CreateNoWindow = true;
-            wimUnmount.RedirectStandardInput = true;
-            wimUnmount.StandardOutputEncoding = Encoding.GetEncoding(850);
+            output = DISM(command);
+            txtOutput.Text = output;
 
-            var proc = Process.Start(wimUnmount);
-            proc.StandardInput.WriteLine(@command);
-            proc.StandardInput.WriteLine("exit");
-
-            string outputTemp = proc.StandardOutput.ReadToEnd();
-            txtOutput.Text = outputTemp;
-            if (outputTemp.Contains("Erreur : "))
+            if (output.Contains("Erreur : "))
                 MessageBox.Show("Attention une erreure s'est produite", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
                 MessageBox.Show("Commande réalisée\nVoir resultat", "GraphDISM");
-            
+
         }
 
         private void btnPackagesTo_Click(object sender, EventArgs e)
@@ -445,22 +415,12 @@ namespace GraphDISM
             DialogResult result = MessageBox.Show("Attention vous êtes sur le point de nettoyer les points de montages de vos images. Après cette action vos images montées ne seronts plus demontables\nVoulez-vous continuer ?", "Attention !", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
-                string command = "DISM /Cleanup-Mountpoints";
-                
-                ProcessStartInfo wimUnmount = new ProcessStartInfo("cmd");
-                wimUnmount.UseShellExecute = false;
-                wimUnmount.RedirectStandardOutput = true;
-                wimUnmount.CreateNoWindow = true;
-                wimUnmount.RedirectStandardInput = true;
-                wimUnmount.StandardOutputEncoding = Encoding.GetEncoding(850);
+                string command = "/Cleanup-Mountpoints", output;
 
-                var proc = Process.Start(wimUnmount);
-                proc.StandardInput.WriteLine(@command);
-                proc.StandardInput.WriteLine("exit");
+                output = DISM(command);
+                txtOutput.Text = output;
 
-                string outputTemp = proc.StandardOutput.ReadToEnd();
-                txtOutput.Text = outputTemp;
-                if (outputTemp.Contains("Erreur : "))
+                if (output.Contains("Erreur : "))
                     MessageBox.Show("Attention une erreure s'est produite", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                     MessageBox.Show("Commande réalisée\nVoir resultat", "GraphDISM");
