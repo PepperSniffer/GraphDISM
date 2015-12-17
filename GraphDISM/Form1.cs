@@ -60,25 +60,31 @@ namespace GraphDISM
             ToolTip1.SetToolTip(this.btnPackagesTo, "Selectionne  le dossier de l'image montée soit la destination des packages séléctionnés");
             ToolTip1.SetToolTip(this.btnAddPackage, "Execute la commande d'ajouts de packages");
             ToolTip1.SetToolTip(this.btnCleanupMount, "Execute la commande de nettoyage de points de montage \nCela vous permet de supprimer manuellement les dossiers montés \nMais vous empeche de les demonter");
-
-
-
-
-
+            ToolTip1.SetToolTip(this.btnChooseDismPath, "Vous permet de selectionner un autre executable DISM pour la prise en charge des commandes utilisées par le programme");
+            ToolTip1.SetToolTip(this.chkUseDism, "Si cochée alors toutes les commandes du programmes seront redirigé vers l'éxécutable séléctionné");
+            ToolTip1.SetToolTip(this.label22, "Chalut !");
         }
-        public static string DISM(string command)
+        string DISM(string command)
         {
             
-            string file = "dism";
-            if (File.Exists(@"C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\amd64\DISM\dism.exe"))
+            string file = "DISM";
+            string outputTemp;
+            if (chkUseDism.Checked)
             {
-                file = @"C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\amd64\DISM\dism.exe";
+                file = txtDISMPath.Text;
             }
             else
             {
-                if (File.Exists(@"C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\x86\DISM\dism.exe"))
+                if (File.Exists(@"C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\amd64\DISM\dism.exe"))
                 {
-                    file = @"C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\x86\DISM\dism.exe";
+                    file = @"C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\amd64\DISM\dism.exe";
+                }
+                else
+                {
+                    if (File.Exists(@"C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\x86\DISM\dism.exe"))
+                    {
+                        file = @"C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\x86\DISM\dism.exe";
+                    }
                 }
             }
             ProcessStartInfo dismExec = new ProcessStartInfo(file);
@@ -88,13 +94,8 @@ namespace GraphDISM
             dismExec.CreateNoWindow = true;
             dismExec.RedirectStandardInput = true;
             dismExec.StandardOutputEncoding = Encoding.GetEncoding(850);
-
-
             var proc = Process.Start(dismExec);
-
-            string outputTemp = "***********Commande éxécutée : " + command + proc.StandardOutput.ReadToEnd();
-            
-            
+            outputTemp = "**Exécutable lancé** " + file + "\r\n**Commande éxécutée** " + command + proc.StandardOutput.ReadToEnd();
             return outputTemp;
         }
 
@@ -223,7 +224,12 @@ namespace GraphDISM
             txtOutput.Text = "GraphDISM By Jules GROSPEILLER";
             compt++;
             if (compt >= 10)
-                txtOutput.Text = "Ceci n'est pas un Easter Egg";
+            {
+                txtOutput.Text = "Chechi n'est pas un eashter egg vas t'en !";
+                compt = 0;
+            }
+                
+
 
         }
         /// <summary>
@@ -424,6 +430,17 @@ namespace GraphDISM
                     MessageBox.Show("Attention une erreure s'est produite", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                     MessageBox.Show("Commande réalisée\nVoir resultat", "GraphDISM");
+            }
+        }
+
+        private void btnChooseDismPath_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofdDISMexe = new OpenFileDialog();
+            ofdDISMexe.Filter = "DISM.exe|*.exe";
+            ofdDISMexe.Title = "Selectionnez l'éxécutable DISM que vous souhaitez";
+            if (ofdDISMexe.ShowDialog() == DialogResult.OK)
+            {
+                txtDISMPath.Text = ofdDISMexe.FileName;
             }
         }
     }

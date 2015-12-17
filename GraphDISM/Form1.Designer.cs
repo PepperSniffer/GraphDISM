@@ -87,6 +87,10 @@
             this.label20 = new System.Windows.Forms.Label();
             this.txtFolderPathPackage = new System.Windows.Forms.TextBox();
             this.btnPackagesTo = new System.Windows.Forms.Button();
+            this.options = new System.Windows.Forms.TabPage();
+            this.btnChooseDismPath = new System.Windows.Forms.Button();
+            this.txtDISMPath = new System.Windows.Forms.TextBox();
+            this.chkUseDism = new System.Windows.Forms.CheckBox();
             this.about = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -96,6 +100,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtOutput = new System.Windows.Forms.TextBox();
             this.btnResetOutput = new System.Windows.Forms.Button();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.Information.SuspendLayout();
             this.mount.SuspendLayout();
@@ -104,6 +110,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numIndex)).BeginInit();
             this.Splitter.SuspendLayout();
             this.addPackage.SuspendLayout();
+            this.options.SuspendLayout();
             this.about.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -114,6 +121,7 @@
             this.tabControl1.Controls.Add(this.Exporter);
             this.tabControl1.Controls.Add(this.Splitter);
             this.tabControl1.Controls.Add(this.addPackage);
+            this.tabControl1.Controls.Add(this.options);
             this.tabControl1.Controls.Add(this.about);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
@@ -722,9 +730,51 @@
             this.btnPackagesTo.UseVisualStyleBackColor = true;
             this.btnPackagesTo.Click += new System.EventHandler(this.btnPackagesTo_Click);
             // 
+            // options
+            // 
+            this.options.Controls.Add(this.label21);
+            this.options.Controls.Add(this.btnChooseDismPath);
+            this.options.Controls.Add(this.txtDISMPath);
+            this.options.Controls.Add(this.chkUseDism);
+            this.options.Location = new System.Drawing.Point(4, 22);
+            this.options.Name = "options";
+            this.options.Size = new System.Drawing.Size(711, 319);
+            this.options.TabIndex = 7;
+            this.options.Text = "Options";
+            this.options.UseVisualStyleBackColor = true;
+            // 
+            // btnChooseDismPath
+            // 
+            this.btnChooseDismPath.Location = new System.Drawing.Point(24, 24);
+            this.btnChooseDismPath.Name = "btnChooseDismPath";
+            this.btnChooseDismPath.Size = new System.Drawing.Size(99, 23);
+            this.btnChooseDismPath.TabIndex = 2;
+            this.btnChooseDismPath.Text = "Choisir DISM";
+            this.btnChooseDismPath.UseVisualStyleBackColor = true;
+            this.btnChooseDismPath.Click += new System.EventHandler(this.btnChooseDismPath_Click);
+            // 
+            // txtDISMPath
+            // 
+            this.txtDISMPath.Location = new System.Drawing.Point(265, 24);
+            this.txtDISMPath.Name = "txtDISMPath";
+            this.txtDISMPath.ReadOnly = true;
+            this.txtDISMPath.Size = new System.Drawing.Size(431, 20);
+            this.txtDISMPath.TabIndex = 1;
+            // 
+            // chkUseDism
+            // 
+            this.chkUseDism.AutoSize = true;
+            this.chkUseDism.Location = new System.Drawing.Point(129, 28);
+            this.chkUseDism.Name = "chkUseDism";
+            this.chkUseDism.Size = new System.Drawing.Size(130, 17);
+            this.chkUseDism.TabIndex = 0;
+            this.chkUseDism.Text = "Utiliser cette version : ";
+            this.chkUseDism.UseVisualStyleBackColor = true;
+            // 
             // about
             // 
             this.about.BackColor = System.Drawing.Color.DarkGray;
+            this.about.Controls.Add(this.label22);
             this.about.Controls.Add(this.label8);
             this.about.Controls.Add(this.label6);
             this.about.Controls.Add(this.label5);
@@ -754,7 +804,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 13);
             this.label6.TabIndex = 4;
-            this.label6.Text = "Version 0.3";
+            this.label6.Text = "Version 0.5";
             // 
             // label5
             // 
@@ -767,7 +817,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 42);
+            this.label4.Location = new System.Drawing.Point(3, 55);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(583, 13);
             this.label4.TabIndex = 2;
@@ -777,20 +827,20 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 29);
+            this.label3.Location = new System.Drawing.Point(3, 42);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(338, 13);
+            this.label3.Size = new System.Drawing.Size(334, 13);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Programme Libre ouvert au modifications et aux critiques constructives";
+            this.label3.Text = "Programme libre ouvert au modifications et aux critiques constructives";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(3, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(281, 13);
+            this.label2.Size = new System.Drawing.Size(261, 13);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Première programmation système de Jules GROSPEILLER";
+            this.label2.Text = "Programateur et chef de projet : Jules GROSPEILLER";
             // 
             // txtOutput
             // 
@@ -812,6 +862,25 @@
             this.btnResetOutput.Text = "Remise à zero";
             this.btnResetOutput.UseVisualStyleBackColor = true;
             this.btnResetOutput.Click += new System.EventHandler(this.btnResetOutput_Click);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(21, 50);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(606, 13);
+            this.label21.TabIndex = 3;
+            this.label21.Text = "Attention la modification de l\'executable ne garantie pas le fonctionnement du pr" +
+    "ogramme  (version recomandée : 10.0.10586.0)";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(3, 29);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(218, 13);
+            this.label22.TabIndex = 8;
+            this.label22.Text = "Beta testeur et co-designer : Antoine Rampin";
             // 
             // GraphDismMain
             // 
@@ -838,6 +907,8 @@
             this.Splitter.PerformLayout();
             this.addPackage.ResumeLayout(false);
             this.addPackage.PerformLayout();
+            this.options.ResumeLayout(false);
+            this.options.PerformLayout();
             this.about.ResumeLayout(false);
             this.about.PerformLayout();
             this.ResumeLayout(false);
@@ -914,6 +985,12 @@
         private System.Windows.Forms.Button btnPackagesTo;
         private System.Windows.Forms.Button btnAddPackage;
         private System.Windows.Forms.Button btnCleanupMount;
+        private System.Windows.Forms.TabPage options;
+        public System.Windows.Forms.CheckBox chkUseDism;
+        private System.Windows.Forms.TextBox txtDISMPath;
+        private System.Windows.Forms.Button btnChooseDismPath;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
     }
 }
 
