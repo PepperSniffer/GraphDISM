@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Diagnostics;
 using System.IO;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace GraphDISM
@@ -27,12 +27,13 @@ namespace GraphDISM
             txtOutput.Text = "GraphDISM By Jules GROSPEILLER";
             cmbCompress.SelectedIndex = 0;
 
+            
+
             System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
             ToolTip1.SetToolTip(this.btnResetOutput, "Remet l'affichage des resultats des operations à zero");
             ToolTip1.SetToolTip(this.btnGetInfo, "Permet d'afficher les informations de l'image séléctionnée");
             ToolTip1.SetToolTip(this.txtPathInfo, "Chemin de l'image");
             ToolTip1.SetToolTip(this.btnOpenFileInfo, "Permet de selectionner l'image");
-            ToolTip1.SetToolTip(this.chkOpenNewFormInfo, "Ouvre les informations dans une nouvelle fenêtre ");
             ToolTip1.SetToolTip(this.btnOpenWimMount, "Permet de selectionner l'image");
             ToolTip1.SetToolTip(this.btnExport, "Exporte l'image séléctionnée avec les options cochées");
             ToolTip1.SetToolTip(this.btnOpenSplit, "Permet de selectionner l'image");
@@ -64,9 +65,10 @@ namespace GraphDISM
             ToolTip1.SetToolTip(this.chkUseDism, "Si cochée alors toutes les commandes du programmes seront redirigé vers l'éxécutable séléctionné");
             ToolTip1.SetToolTip(this.label22, "Chalut !");
         }
-        string DISM(string command)
+        public void DISM(string command)
         {
-            
+            ///ANCIEN DISM
+            /*
             string file = "DISM";
             string outputTemp;
             if (chkUseDism.Checked)
@@ -97,6 +99,96 @@ namespace GraphDISM
             var proc = Process.Start(dismExec);
             outputTemp = "**Exécutable lancé** " + file + "\r\n**Commande éxécutée** " + command + proc.StandardOutput.ReadToEnd();
             return outputTemp;
+            */
+            /// ANCIEN DISM
+
+
+
+
+
+
+
+            /// NOUVEAUX DISM AVEC BACKGROUNDWORKER
+            /// 
+            progressBar.Visible = true;
+            txtOutput.Text = "";
+
+            // BACKGROUND WORKER !!!!
+
+            BackgroundWorker bw = new BackgroundWorker();
+            // this allows our worker to report progress during work
+            bw.WorkerReportsProgress = true;
+            bw.WorkerSupportsCancellation = true;
+
+            // what to do in the background thread
+            bw.DoWork += new DoWorkEventHandler(
+                delegate (object o, DoWorkEventArgs args)
+                {
+                    BackgroundWorker b = o as BackgroundWorker;
+
+                    string file = "DISM";
+                    string outputTemp;
+                    if (chkUseDism.Checked)
+                    {
+                        file = txtDISMPath.Text;
+                    }
+                    else
+                    {
+                        if (File.Exists(@"C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\amd64\DISM\dism.exe"))
+                        {
+                            file = @"C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\amd64\DISM\dism.exe";
+                        }
+                        else
+                        {
+                            if (File.Exists(@"C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\x86\DISM\dism.exe"))
+                            {
+                                file = @"C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\x86\DISM\dism.exe";
+                            }
+                        }
+                    }
+                    ProcessStartInfo dismExec = new ProcessStartInfo(file);
+                    dismExec.Arguments = command;
+                    dismExec.UseShellExecute = false;
+                    dismExec.RedirectStandardOutput = true;
+                    dismExec.CreateNoWindow = true;
+                    dismExec.RedirectStandardInput = true;
+                    dismExec.StandardOutputEncoding = Encoding.GetEncoding(850);
+                    var proc = Process.Start(dismExec);
+                    bw.ReportProgress(1, outputTemp = "**Exécutable lancé** " + file + "\r\n**Commande éxécutée** " + command);
+                    //+ proc.StandardOutput.ReadToEnd();
+                    while (!proc.StandardOutput.EndOfStream)
+                    {
+                        bw.ReportProgress(1,proc.StandardOutput.ReadLine());
+                    }
+                    
+
+                });
+
+            // what to do when progress changed (update the progress bar for example)
+            bw.ProgressChanged += new ProgressChangedEventHandler(
+                delegate (object o, ProgressChangedEventArgs args)
+                {
+                    txtOutput.AppendText(args.UserState.ToString()+"\r\n");
+                });
+
+            // what to do when worker completes its task (notify the user)
+            bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(
+                delegate (object o, RunWorkerCompletedEventArgs args)
+                {
+                    progressBar.Visible = false;
+                    //MessageBox.Show("HELLO !");
+
+                    if (txtOutput.Text.Contains("Erreur : "))
+                        MessageBox.Show("Attention une erreure s'est produite", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                        MessageBox.Show("Commande réalisée\nVoir resultat", "GraphDISM");
+                });
+
+            bw.RunWorkerAsync();
+
+            //END BACKGROUND WORKER !!!
+            
+
         }
 
         /// <summary>
@@ -120,27 +212,15 @@ namespace GraphDISM
         /// <param name="e"></param>
         private void btnGetInfo_Click(object sender, EventArgs e)
         {
-            string command = "/Get-WimInfo /wimfile:", arguments = "", output;
+            string command = "/Get-WimInfo /wimfile:", arguments = "";
 
 
             arguments = txtPathInfo.Text;
             command = (command + "\"" + arguments + "\"");
-
-            output = DISM(command);
-            txtOutput.Text = output;
-
-            if (output.Contains("Erreur : "))
-                MessageBox.Show("Attention une erreure s'est produite", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else
-                MessageBox.Show("Commande réalisée\nVoir resultat", "GraphDISM");
-
-
-            if (chkOpenNewFormInfo.Checked)
-            {
-
-                Form FormInfoExt = new FormInfoExt(output);
-                FormInfoExt.Show();
-            }
+            
+            DISM(command);
+            
+            
             
 
 
@@ -186,7 +266,7 @@ namespace GraphDISM
         /// <param name="e"></param>
         private void btnExport_Click(object sender, EventArgs e)
         {
-            string command = "/Export-Image /SourceImageFile:", source = "", index = "", destination = "",output;
+            string command = "/Export-Image /SourceImageFile:", source = "", index = "", destination = "";
 
             destination = txtExportTo.Text;
             source = txtExportFrom.Text;
@@ -204,13 +284,8 @@ namespace GraphDISM
             if (chkBoot.Checked)
                 command = command + " /Bootable";
 
-            output = DISM(command);
-            txtOutput.Text = output;
-
-            if (output.Contains("Erreur : "))
-                MessageBox.Show("Attention une erreure s'est produite", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else
-                MessageBox.Show("Commande réalisée\nVoir resultat", "GraphDISM");
+            DISM(command);
+            
 
 
         }
@@ -270,7 +345,7 @@ namespace GraphDISM
         /// <param name="e"></param>
         private void btnSplit_Click(object sender, EventArgs e)
         {
-            string command = "/Split-Image /ImageFile:", source = "", size = "", destination = "",output;
+            string command = "/Split-Image /ImageFile:", source = "", size = "", destination = "";
 
             destination = txtSplitTo.Text;
             source = txtOpenSplit.Text;
@@ -281,13 +356,8 @@ namespace GraphDISM
             if (chkVerifySplit.Checked)
                 command = command + " /CheckIntegrity";
 
-            output = DISM(command);
-            txtOutput.Text = output;
-
-            if (output.Contains("Erreur : "))
-                MessageBox.Show("Attention une erreure s'est produite", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else
-                MessageBox.Show("Commande réalisée\nVoir resultat", "GraphDISM");
+            DISM(command);
+            
 
         }
         /// <summary>
@@ -323,7 +393,7 @@ namespace GraphDISM
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-            string command = "/Mount-Image /ImageFile:", source = "", index = "", destination = "",output;
+            string command = "/Mount-Image /ImageFile:", source = "", index = "", destination = "";
 
             destination = txtMountTo.Text;
             source = txtMountFrom.Text;
@@ -338,18 +408,13 @@ namespace GraphDISM
             if (chkCheckIntegrityMount.Checked)
                 command += " /CheckIntegrity";
 
-            output = DISM(command);
-            txtOutput.Text = output;
-
-            if (output.Contains("Erreur : "))
-                MessageBox.Show("Attention une erreure s'est produite", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else
-                MessageBox.Show("Commande réalisée\nVoir resultat", "GraphDISM");
+            DISM(command);
+            
         }
 
         private void btnUnmout_Click(object sender, EventArgs e)
         {
-            string command = "/Unmount-Image /MountDir:", mountDir = "",output;
+            string command = "/Unmount-Image /MountDir:", mountDir = "";
             mountDir = txtMountTo.Text;
             command = (command + "\"" + mountDir + "\"");
 
@@ -367,13 +432,8 @@ namespace GraphDISM
             if (chkAppendUnmount.Checked)
                 command += " /Append";
 
-            output = DISM(command);
-            txtOutput.Text = output;
-
-            if (output.Contains("Erreur : "))
-                MessageBox.Show("Attention une erreure s'est produite", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else
-                MessageBox.Show("Commande réalisée\nVoir resultat", "GraphDISM");
+            DISM(command);
+            
         }
 
         private void btnChoosePackages_Click(object sender, EventArgs e)
@@ -394,17 +454,12 @@ namespace GraphDISM
 
         private void btnAddPackage_Click(object sender, EventArgs e)
         {
-            string command = "/Image:\"", mountDir , output;
+            string command = "/Image:\"", mountDir ;
             mountDir = txtFolderPathPackage.Text;
             command = (command + mountDir + "\" /Add-Package" + multiplePackages);
 
-            output = DISM(command);
-            txtOutput.Text = output;
-
-            if (output.Contains("Erreur : "))
-                MessageBox.Show("Attention une erreure s'est produite", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else
-                MessageBox.Show("Commande réalisée\nVoir resultat", "GraphDISM");
+            DISM(command);
+            
 
         }
 
@@ -421,15 +476,9 @@ namespace GraphDISM
             DialogResult result = MessageBox.Show("Attention vous êtes sur le point de nettoyer les points de montages de vos images. Après cette action vos images montées ne seronts plus demontables\nVoulez-vous continuer ?", "Attention !", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
-                string command = "/Cleanup-Mountpoints", output;
+                string command = "/Cleanup-Mountpoints";
 
-                output = DISM(command);
-                txtOutput.Text = output;
-
-                if (output.Contains("Erreur : "))
-                    MessageBox.Show("Attention une erreure s'est produite", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else
-                    MessageBox.Show("Commande réalisée\nVoir resultat", "GraphDISM");
+                DISM(command);
             }
         }
 
@@ -442,6 +491,12 @@ namespace GraphDISM
             {
                 txtDISMPath.Text = ofdDISMexe.FileName;
             }
+        }
+
+        private void btnOpenNewWindow_Click(object sender, EventArgs e)
+        {
+            Form FormInfoExt = new FormInfoExt(txtOutput.Text);
+            FormInfoExt.Show();
         }
     }
 }

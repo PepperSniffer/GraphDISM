@@ -32,7 +32,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Information = new System.Windows.Forms.TabPage();
             this.label19 = new System.Windows.Forms.Label();
-            this.chkOpenNewFormInfo = new System.Windows.Forms.CheckBox();
             this.txtPathInfo = new System.Windows.Forms.TextBox();
             this.btnOpenFileInfo = new System.Windows.Forms.Button();
             this.btnGetInfo = new System.Windows.Forms.Button();
@@ -88,10 +87,12 @@
             this.txtFolderPathPackage = new System.Windows.Forms.TextBox();
             this.btnPackagesTo = new System.Windows.Forms.Button();
             this.options = new System.Windows.Forms.TabPage();
+            this.label21 = new System.Windows.Forms.Label();
             this.btnChooseDismPath = new System.Windows.Forms.Button();
             this.txtDISMPath = new System.Windows.Forms.TextBox();
             this.chkUseDism = new System.Windows.Forms.CheckBox();
             this.about = new System.Windows.Forms.TabPage();
+            this.label22 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -100,8 +101,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtOutput = new System.Windows.Forms.TextBox();
             this.btnResetOutput = new System.Windows.Forms.Button();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.btnOpenNewWindow = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.Information.SuspendLayout();
             this.mount.SuspendLayout();
@@ -112,6 +117,10 @@
             this.addPackage.SuspendLayout();
             this.options.SuspendLayout();
             this.about.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -133,7 +142,6 @@
             // 
             this.Information.BackColor = System.Drawing.Color.White;
             this.Information.Controls.Add(this.label19);
-            this.Information.Controls.Add(this.chkOpenNewFormInfo);
             this.Information.Controls.Add(this.txtPathInfo);
             this.Information.Controls.Add(this.btnOpenFileInfo);
             this.Information.Controls.Add(this.btnGetInfo);
@@ -152,16 +160,6 @@
             this.label19.Size = new System.Drawing.Size(41, 13);
             this.label19.TabIndex = 8;
             this.label19.Text = "Source";
-            // 
-            // chkOpenNewFormInfo
-            // 
-            this.chkOpenNewFormInfo.AutoSize = true;
-            this.chkOpenNewFormInfo.Location = new System.Drawing.Point(495, 136);
-            this.chkOpenNewFormInfo.Name = "chkOpenNewFormInfo";
-            this.chkOpenNewFormInfo.Size = new System.Drawing.Size(180, 17);
-            this.chkOpenNewFormInfo.TabIndex = 3;
-            this.chkOpenNewFormInfo.Text = "Ouvrir dans une nouvelle fenêtre";
-            this.chkOpenNewFormInfo.UseVisualStyleBackColor = true;
             // 
             // txtPathInfo
             // 
@@ -193,16 +191,10 @@
             // 
             // mount
             // 
+            this.mount.Controls.Add(this.groupBox2);
+            this.mount.Controls.Add(this.groupBox1);
             this.mount.Controls.Add(this.btnCleanupMount);
-            this.mount.Controls.Add(this.chkAppendUnmount);
-            this.mount.Controls.Add(this.chkCheckIntegrityUnmount);
-            this.mount.Controls.Add(this.chkCommitUnmount);
-            this.mount.Controls.Add(this.btnUnmout);
-            this.mount.Controls.Add(this.btnMount);
             this.mount.Controls.Add(this.label18);
-            this.mount.Controls.Add(this.chkCheckIntegrityMount);
-            this.mount.Controls.Add(this.chkOptimizeMount);
-            this.mount.Controls.Add(this.chkReadOnlyMout);
             this.mount.Controls.Add(this.txtMountTo);
             this.mount.Controls.Add(this.btnMountTo);
             this.mount.Controls.Add(this.label7);
@@ -230,7 +222,7 @@
             // chkAppendUnmount
             // 
             this.chkAppendUnmount.AutoSize = true;
-            this.chkAppendUnmount.Location = new System.Drawing.Point(499, 296);
+            this.chkAppendUnmount.Location = new System.Drawing.Point(6, 94);
             this.chkAppendUnmount.Name = "chkAppendUnmount";
             this.chkAppendUnmount.Size = new System.Drawing.Size(200, 17);
             this.chkAppendUnmount.TabIndex = 22;
@@ -240,7 +232,7 @@
             // chkCheckIntegrityUnmount
             // 
             this.chkCheckIntegrityUnmount.AutoSize = true;
-            this.chkCheckIntegrityUnmount.Location = new System.Drawing.Point(499, 273);
+            this.chkCheckIntegrityUnmount.Location = new System.Drawing.Point(6, 71);
             this.chkCheckIntegrityUnmount.Name = "chkCheckIntegrityUnmount";
             this.chkCheckIntegrityUnmount.Size = new System.Drawing.Size(102, 17);
             this.chkCheckIntegrityUnmount.TabIndex = 21;
@@ -250,7 +242,7 @@
             // chkCommitUnmount
             // 
             this.chkCommitUnmount.AutoSize = true;
-            this.chkCommitUnmount.Location = new System.Drawing.Point(499, 250);
+            this.chkCommitUnmount.Location = new System.Drawing.Point(6, 48);
             this.chkCommitUnmount.Name = "chkCommitUnmount";
             this.chkCommitUnmount.Size = new System.Drawing.Size(153, 17);
             this.chkCommitUnmount.TabIndex = 20;
@@ -259,7 +251,7 @@
             // 
             // btnUnmout
             // 
-            this.btnUnmout.Location = new System.Drawing.Point(499, 221);
+            this.btnUnmout.Location = new System.Drawing.Point(6, 19);
             this.btnUnmout.Name = "btnUnmout";
             this.btnUnmout.Size = new System.Drawing.Size(75, 23);
             this.btnUnmout.TabIndex = 19;
@@ -269,7 +261,7 @@
             // 
             // btnMount
             // 
-            this.btnMount.Location = new System.Drawing.Point(577, 48);
+            this.btnMount.Location = new System.Drawing.Point(6, 19);
             this.btnMount.Name = "btnMount";
             this.btnMount.Size = new System.Drawing.Size(98, 82);
             this.btnMount.TabIndex = 18;
@@ -289,7 +281,7 @@
             // chkCheckIntegrityMount
             // 
             this.chkCheckIntegrityMount.AutoSize = true;
-            this.chkCheckIntegrityMount.Location = new System.Drawing.Point(577, 182);
+            this.chkCheckIntegrityMount.Location = new System.Drawing.Point(6, 153);
             this.chkCheckIntegrityMount.Name = "chkCheckIntegrityMount";
             this.chkCheckIntegrityMount.Size = new System.Drawing.Size(102, 17);
             this.chkCheckIntegrityMount.TabIndex = 16;
@@ -299,7 +291,7 @@
             // chkOptimizeMount
             // 
             this.chkOptimizeMount.AutoSize = true;
-            this.chkOptimizeMount.Location = new System.Drawing.Point(577, 159);
+            this.chkOptimizeMount.Location = new System.Drawing.Point(6, 130);
             this.chkOptimizeMount.Name = "chkOptimizeMount";
             this.chkOptimizeMount.Size = new System.Drawing.Size(69, 17);
             this.chkOptimizeMount.TabIndex = 15;
@@ -309,7 +301,7 @@
             // chkReadOnlyMout
             // 
             this.chkReadOnlyMout.AutoSize = true;
-            this.chkReadOnlyMout.Location = new System.Drawing.Point(577, 136);
+            this.chkReadOnlyMout.Location = new System.Drawing.Point(6, 107);
             this.chkReadOnlyMout.Name = "chkReadOnlyMout";
             this.chkReadOnlyMout.Size = new System.Drawing.Size(92, 17);
             this.chkReadOnlyMout.TabIndex = 14;
@@ -388,17 +380,15 @@
             // Exporter
             // 
             this.Exporter.BackColor = System.Drawing.Color.White;
+            this.Exporter.Controls.Add(this.groupBox3);
             this.Exporter.Controls.Add(this.label11);
             this.Exporter.Controls.Add(this.label10);
             this.Exporter.Controls.Add(this.label9);
             this.Exporter.Controls.Add(this.cmbCompress);
-            this.Exporter.Controls.Add(this.chkBoot);
             this.Exporter.Controls.Add(this.label1);
             this.Exporter.Controls.Add(this.numIndex);
-            this.Exporter.Controls.Add(this.chkVerifyExport);
             this.Exporter.Controls.Add(this.txtExportTo);
             this.Exporter.Controls.Add(this.btnExportTo);
-            this.Exporter.Controls.Add(this.btnExport);
             this.Exporter.Controls.Add(this.txtExportFrom);
             this.Exporter.Controls.Add(this.btnOpenWimExp);
             this.Exporter.Location = new System.Drawing.Point(4, 22);
@@ -455,7 +445,7 @@
             // chkBoot
             // 
             this.chkBoot.AutoSize = true;
-            this.chkBoot.Location = new System.Drawing.Point(577, 159);
+            this.chkBoot.Location = new System.Drawing.Point(6, 130);
             this.chkBoot.Name = "chkBoot";
             this.chkBoot.Size = new System.Drawing.Size(68, 17);
             this.chkBoot.TabIndex = 11;
@@ -491,7 +481,7 @@
             // chkVerifyExport
             // 
             this.chkVerifyExport.AutoSize = true;
-            this.chkVerifyExport.Location = new System.Drawing.Point(577, 136);
+            this.chkVerifyExport.Location = new System.Drawing.Point(6, 107);
             this.chkVerifyExport.Name = "chkVerifyExport";
             this.chkVerifyExport.Size = new System.Drawing.Size(58, 17);
             this.chkVerifyExport.TabIndex = 10;
@@ -517,7 +507,7 @@
             // 
             // btnExport
             // 
-            this.btnExport.Location = new System.Drawing.Point(577, 48);
+            this.btnExport.Location = new System.Drawing.Point(6, 19);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(98, 82);
             this.btnExport.TabIndex = 12;
@@ -545,12 +535,11 @@
             // Splitter
             // 
             this.Splitter.BackColor = System.Drawing.Color.White;
+            this.Splitter.Controls.Add(this.groupBox4);
             this.Splitter.Controls.Add(this.label16);
             this.Splitter.Controls.Add(this.label15);
             this.Splitter.Controls.Add(this.label14);
             this.Splitter.Controls.Add(this.label13);
-            this.Splitter.Controls.Add(this.chkVerifySplit);
-            this.Splitter.Controls.Add(this.btnSplit);
             this.Splitter.Controls.Add(this.label12);
             this.Splitter.Controls.Add(this.txtSizeSplit);
             this.Splitter.Controls.Add(this.txtSplitTo);
@@ -566,7 +555,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(130, 201);
+            this.label16.Location = new System.Drawing.Point(126, 190);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(78, 13);
             this.label16.TabIndex = 16;
@@ -575,7 +564,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(130, 188);
+            this.label15.Location = new System.Drawing.Point(127, 177);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(119, 13);
             this.label15.TabIndex = 15;
@@ -602,7 +591,7 @@
             // chkVerifySplit
             // 
             this.chkVerifySplit.AutoSize = true;
-            this.chkVerifySplit.Location = new System.Drawing.Point(577, 136);
+            this.chkVerifySplit.Location = new System.Drawing.Point(6, 107);
             this.chkVerifySplit.Name = "chkVerifySplit";
             this.chkVerifySplit.Size = new System.Drawing.Size(58, 17);
             this.chkVerifySplit.TabIndex = 12;
@@ -611,7 +600,7 @@
             // 
             // btnSplit
             // 
-            this.btnSplit.Location = new System.Drawing.Point(577, 48);
+            this.btnSplit.Location = new System.Drawing.Point(6, 19);
             this.btnSplit.Name = "btnSplit";
             this.btnSplit.Size = new System.Drawing.Size(98, 82);
             this.btnSplit.TabIndex = 11;
@@ -622,7 +611,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(-3, 157);
+            this.label12.Location = new System.Drawing.Point(3, 157);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(121, 13);
             this.label12.TabIndex = 10;
@@ -630,7 +619,7 @@
             // 
             // txtSizeSplit
             // 
-            this.txtSizeSplit.Location = new System.Drawing.Point(143, 154);
+            this.txtSizeSplit.Location = new System.Drawing.Point(130, 154);
             this.txtSizeSplit.Name = "txtSizeSplit";
             this.txtSizeSplit.Size = new System.Drawing.Size(76, 20);
             this.txtSizeSplit.TabIndex = 9;
@@ -640,14 +629,14 @@
             // 
             this.txtSplitTo.Location = new System.Drawing.Point(121, 128);
             this.txtSplitTo.Name = "txtSplitTo";
-            this.txtSplitTo.Size = new System.Drawing.Size(293, 20);
+            this.txtSplitTo.Size = new System.Drawing.Size(369, 20);
             this.txtSplitTo.TabIndex = 8;
             // 
             // txtOpenSplit
             // 
             this.txtOpenSplit.Location = new System.Drawing.Point(121, 49);
             this.txtOpenSplit.Name = "txtOpenSplit";
-            this.txtOpenSplit.Size = new System.Drawing.Size(293, 20);
+            this.txtOpenSplit.Size = new System.Drawing.Size(369, 20);
             this.txtOpenSplit.TabIndex = 7;
             // 
             // btnSplitTo
@@ -709,15 +698,15 @@
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(66, 110);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(60, 13);
+            this.label20.Size = new System.Drawing.Size(143, 13);
             this.label20.TabIndex = 16;
-            this.label20.Text = "Destination";
+            this.label20.Text = "Image montée de destination";
             // 
             // txtFolderPathPackage
             // 
             this.txtFolderPathPackage.Location = new System.Drawing.Point(132, 128);
             this.txtFolderPathPackage.Name = "txtFolderPathPackage";
-            this.txtFolderPathPackage.Size = new System.Drawing.Size(293, 20);
+            this.txtFolderPathPackage.Size = new System.Drawing.Size(369, 20);
             this.txtFolderPathPackage.TabIndex = 15;
             // 
             // btnPackagesTo
@@ -726,7 +715,7 @@
             this.btnPackagesTo.Name = "btnPackagesTo";
             this.btnPackagesTo.Size = new System.Drawing.Size(120, 23);
             this.btnPackagesTo.TabIndex = 14;
-            this.btnPackagesTo.Text = "Dossier de destination";
+            this.btnPackagesTo.Text = "Destination";
             this.btnPackagesTo.UseVisualStyleBackColor = true;
             this.btnPackagesTo.Click += new System.EventHandler(this.btnPackagesTo_Click);
             // 
@@ -742,6 +731,16 @@
             this.options.TabIndex = 7;
             this.options.Text = "Options";
             this.options.UseVisualStyleBackColor = true;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(21, 50);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(606, 13);
+            this.label21.TabIndex = 3;
+            this.label21.Text = "Attention la modification de l\'executable ne garantie pas le fonctionnement du pr" +
+    "ogramme  (version recomandée : 10.0.10586.0)";
             // 
             // btnChooseDismPath
             // 
@@ -787,6 +786,15 @@
             this.about.TabIndex = 3;
             this.about.Text = "A propos";
             // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(3, 29);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(218, 13);
+            this.label22.TabIndex = 8;
+            this.label22.Text = "Beta testeur et co-designer : Antoine Rampin";
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -804,7 +812,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 13);
             this.label6.TabIndex = 4;
-            this.label6.Text = "Version 0.5";
+            this.label6.Text = "Version 1.0";
             // 
             // label5
             // 
@@ -855,7 +863,7 @@
             // 
             // btnResetOutput
             // 
-            this.btnResetOutput.Location = new System.Drawing.Point(619, 552);
+            this.btnResetOutput.Location = new System.Drawing.Point(631, 584);
             this.btnResetOutput.Name = "btnResetOutput";
             this.btnResetOutput.Size = new System.Drawing.Size(93, 23);
             this.btnResetOutput.TabIndex = 2;
@@ -863,30 +871,82 @@
             this.btnResetOutput.UseVisualStyleBackColor = true;
             this.btnResetOutput.Click += new System.EventHandler(this.btnResetOutput_Click);
             // 
-            // label21
+            // progressBar
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(21, 50);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(606, 13);
-            this.label21.TabIndex = 3;
-            this.label21.Text = "Attention la modification de l\'executable ne garantie pas le fonctionnement du pr" +
-    "ogramme  (version recomandée : 10.0.10586.0)";
+            this.progressBar.Location = new System.Drawing.Point(9, 553);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(715, 23);
+            this.progressBar.Step = 1;
+            this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.progressBar.TabIndex = 3;
+            this.progressBar.Visible = false;
             // 
-            // label22
+            // btnOpenNewWindow
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(3, 29);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(218, 13);
-            this.label22.TabIndex = 8;
-            this.label22.Text = "Beta testeur et co-designer : Antoine Rampin";
+            this.btnOpenNewWindow.Location = new System.Drawing.Point(9, 584);
+            this.btnOpenNewWindow.Name = "btnOpenNewWindow";
+            this.btnOpenNewWindow.Size = new System.Drawing.Size(205, 23);
+            this.btnOpenNewWindow.TabIndex = 4;
+            this.btnOpenNewWindow.Text = "Placer résultat dans une autre fenêtre";
+            this.btnOpenNewWindow.UseVisualStyleBackColor = true;
+            this.btnOpenNewWindow.Click += new System.EventHandler(this.btnOpenNewWindow_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.chkAppendUnmount);
+            this.groupBox1.Controls.Add(this.chkCheckIntegrityUnmount);
+            this.groupBox1.Controls.Add(this.chkCommitUnmount);
+            this.groupBox1.Controls.Add(this.btnUnmout);
+            this.groupBox1.Location = new System.Drawing.Point(310, 200);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(203, 116);
+            this.groupBox1.TabIndex = 24;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Demontage";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnMount);
+            this.groupBox2.Controls.Add(this.chkCheckIntegrityMount);
+            this.groupBox2.Controls.Add(this.chkOptimizeMount);
+            this.groupBox2.Controls.Add(this.chkReadOnlyMout);
+            this.groupBox2.Location = new System.Drawing.Point(596, 31);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(112, 177);
+            this.groupBox2.TabIndex = 25;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Montage";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.chkBoot);
+            this.groupBox3.Controls.Add(this.chkVerifyExport);
+            this.groupBox3.Controls.Add(this.btnExport);
+            this.groupBox3.Location = new System.Drawing.Point(596, 31);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(109, 153);
+            this.groupBox3.TabIndex = 13;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Export";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.chkVerifySplit);
+            this.groupBox4.Controls.Add(this.btnSplit);
+            this.groupBox4.Location = new System.Drawing.Point(598, 31);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(110, 134);
+            this.groupBox4.TabIndex = 17;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Split";
             // 
             // GraphDismMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(743, 587);
+            this.ClientSize = new System.Drawing.Size(743, 619);
+            this.Controls.Add(this.btnOpenNewWindow);
+            this.Controls.Add(this.progressBar);
             this.Controls.Add(this.btnResetOutput);
             this.Controls.Add(this.txtOutput);
             this.Controls.Add(this.tabControl1);
@@ -911,6 +971,14 @@
             this.options.PerformLayout();
             this.about.ResumeLayout(false);
             this.about.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -931,7 +999,6 @@
         private System.Windows.Forms.TextBox txtExportTo;
         private System.Windows.Forms.Button btnExportTo;
         private System.Windows.Forms.CheckBox chkVerifyExport;
-        private System.Windows.Forms.CheckBox chkOpenNewFormInfo;
         private System.Windows.Forms.NumericUpDown numIndex;
         private System.Windows.Forms.CheckBox chkBoot;
         private System.Windows.Forms.Label label1;
@@ -991,6 +1058,12 @@
         private System.Windows.Forms.Button btnChooseDismPath;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.ProgressBar progressBar;
+        private System.Windows.Forms.Button btnOpenNewWindow;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox4;
     }
 }
 

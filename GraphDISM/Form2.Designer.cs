@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInfoExt));
             this.txtOutputExt = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtOutputExt
             // 
+            this.txtOutputExt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtOutputExt.Location = new System.Drawing.Point(12, 12);
             this.txtOutputExt.Multiline = true;
             this.txtOutputExt.Name = "txtOutputExt";
@@ -47,8 +49,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(553, 626);
             this.Controls.Add(this.txtOutputExt);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormInfoExt";
-            this.Text = "Information ";
+            this.ShowIcon = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.Text = "Sortie Secondaire";
             this.ResumeLayout(false);
             this.PerformLayout();
 
