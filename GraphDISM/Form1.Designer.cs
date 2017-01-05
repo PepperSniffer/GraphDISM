@@ -36,16 +36,18 @@
             this.btnOpenFileInfo = new System.Windows.Forms.Button();
             this.btnGetInfo = new System.Windows.Forms.Button();
             this.mount = new System.Windows.Forms.TabPage();
-            this.btnCleanupMount = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnMount = new System.Windows.Forms.Button();
+            this.chkCheckIntegrityMount = new System.Windows.Forms.CheckBox();
+            this.chkOptimizeMount = new System.Windows.Forms.CheckBox();
+            this.chkReadOnlyMout = new System.Windows.Forms.CheckBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.chkAppendUnmount = new System.Windows.Forms.CheckBox();
             this.chkCheckIntegrityUnmount = new System.Windows.Forms.CheckBox();
             this.chkCommitUnmount = new System.Windows.Forms.CheckBox();
             this.btnUnmout = new System.Windows.Forms.Button();
-            this.btnMount = new System.Windows.Forms.Button();
+            this.btnCleanupMount = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
-            this.chkCheckIntegrityMount = new System.Windows.Forms.CheckBox();
-            this.chkOptimizeMount = new System.Windows.Forms.CheckBox();
-            this.chkReadOnlyMout = new System.Windows.Forms.CheckBox();
             this.txtMountTo = new System.Windows.Forms.TextBox();
             this.btnMountTo = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -54,26 +56,28 @@
             this.txtMountFrom = new System.Windows.Forms.TextBox();
             this.btnOpenWimMount = new System.Windows.Forms.Button();
             this.Exporter = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.chkBoot = new System.Windows.Forms.CheckBox();
+            this.chkVerifyExport = new System.Windows.Forms.CheckBox();
+            this.btnExport = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.cmbCompress = new System.Windows.Forms.ComboBox();
-            this.chkBoot = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.numIndex = new System.Windows.Forms.NumericUpDown();
-            this.chkVerifyExport = new System.Windows.Forms.CheckBox();
             this.txtExportTo = new System.Windows.Forms.TextBox();
             this.btnExportTo = new System.Windows.Forms.Button();
-            this.btnExport = new System.Windows.Forms.Button();
             this.txtExportFrom = new System.Windows.Forms.TextBox();
             this.btnOpenWimExp = new System.Windows.Forms.Button();
             this.Splitter = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.chkVerifySplit = new System.Windows.Forms.CheckBox();
+            this.btnSplit = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.chkVerifySplit = new System.Windows.Forms.CheckBox();
-            this.btnSplit = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.txtSizeSplit = new System.Windows.Forms.TextBox();
             this.txtSplitTo = new System.Windows.Forms.TextBox();
@@ -103,24 +107,20 @@
             this.btnResetOutput = new System.Windows.Forms.Button();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.btnOpenNewWindow = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.Information.SuspendLayout();
             this.mount.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbMoutIndex)).BeginInit();
             this.Exporter.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numIndex)).BeginInit();
             this.Splitter.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.addPackage.SuspendLayout();
             this.options.SuspendLayout();
             this.about.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -209,15 +209,71 @@
             this.mount.Text = "Monter";
             this.mount.UseVisualStyleBackColor = true;
             // 
-            // btnCleanupMount
+            // groupBox2
             // 
-            this.btnCleanupMount.Location = new System.Drawing.Point(25, 205);
-            this.btnCleanupMount.Name = "btnCleanupMount";
-            this.btnCleanupMount.Size = new System.Drawing.Size(143, 55);
-            this.btnCleanupMount.TabIndex = 23;
-            this.btnCleanupMount.Text = "Nettoyer les points de montages";
-            this.btnCleanupMount.UseVisualStyleBackColor = true;
-            this.btnCleanupMount.Click += new System.EventHandler(this.btnCleanupMount_Click);
+            this.groupBox2.Controls.Add(this.btnMount);
+            this.groupBox2.Controls.Add(this.chkCheckIntegrityMount);
+            this.groupBox2.Controls.Add(this.chkOptimizeMount);
+            this.groupBox2.Controls.Add(this.chkReadOnlyMout);
+            this.groupBox2.Location = new System.Drawing.Point(596, 31);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(112, 177);
+            this.groupBox2.TabIndex = 25;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Montage";
+            // 
+            // btnMount
+            // 
+            this.btnMount.Location = new System.Drawing.Point(6, 19);
+            this.btnMount.Name = "btnMount";
+            this.btnMount.Size = new System.Drawing.Size(98, 82);
+            this.btnMount.TabIndex = 18;
+            this.btnMount.Text = "Monter";
+            this.btnMount.UseVisualStyleBackColor = true;
+            this.btnMount.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // chkCheckIntegrityMount
+            // 
+            this.chkCheckIntegrityMount.AutoSize = true;
+            this.chkCheckIntegrityMount.Location = new System.Drawing.Point(6, 153);
+            this.chkCheckIntegrityMount.Name = "chkCheckIntegrityMount";
+            this.chkCheckIntegrityMount.Size = new System.Drawing.Size(102, 17);
+            this.chkCheckIntegrityMount.TabIndex = 16;
+            this.chkCheckIntegrityMount.Text = "Verifier l\'intégrité";
+            this.chkCheckIntegrityMount.UseVisualStyleBackColor = true;
+            // 
+            // chkOptimizeMount
+            // 
+            this.chkOptimizeMount.AutoSize = true;
+            this.chkOptimizeMount.Location = new System.Drawing.Point(6, 130);
+            this.chkOptimizeMount.Name = "chkOptimizeMount";
+            this.chkOptimizeMount.Size = new System.Drawing.Size(69, 17);
+            this.chkOptimizeMount.TabIndex = 15;
+            this.chkOptimizeMount.Text = "Optimiser";
+            this.chkOptimizeMount.UseVisualStyleBackColor = true;
+            // 
+            // chkReadOnlyMout
+            // 
+            this.chkReadOnlyMout.AutoSize = true;
+            this.chkReadOnlyMout.Location = new System.Drawing.Point(6, 107);
+            this.chkReadOnlyMout.Name = "chkReadOnlyMout";
+            this.chkReadOnlyMout.Size = new System.Drawing.Size(92, 17);
+            this.chkReadOnlyMout.TabIndex = 14;
+            this.chkReadOnlyMout.Text = "Lecture Seule";
+            this.chkReadOnlyMout.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.chkAppendUnmount);
+            this.groupBox1.Controls.Add(this.chkCheckIntegrityUnmount);
+            this.groupBox1.Controls.Add(this.chkCommitUnmount);
+            this.groupBox1.Controls.Add(this.btnUnmout);
+            this.groupBox1.Location = new System.Drawing.Point(310, 200);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(203, 116);
+            this.groupBox1.TabIndex = 24;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Demontage";
             // 
             // chkAppendUnmount
             // 
@@ -259,15 +315,15 @@
             this.btnUnmout.UseVisualStyleBackColor = true;
             this.btnUnmout.Click += new System.EventHandler(this.btnUnmout_Click);
             // 
-            // btnMount
+            // btnCleanupMount
             // 
-            this.btnMount.Location = new System.Drawing.Point(6, 19);
-            this.btnMount.Name = "btnMount";
-            this.btnMount.Size = new System.Drawing.Size(98, 82);
-            this.btnMount.TabIndex = 18;
-            this.btnMount.Text = "Monter";
-            this.btnMount.UseVisualStyleBackColor = true;
-            this.btnMount.Click += new System.EventHandler(this.button1_Click);
+            this.btnCleanupMount.Location = new System.Drawing.Point(25, 205);
+            this.btnCleanupMount.Name = "btnCleanupMount";
+            this.btnCleanupMount.Size = new System.Drawing.Size(143, 55);
+            this.btnCleanupMount.TabIndex = 23;
+            this.btnCleanupMount.Text = "Nettoyer les points de montages";
+            this.btnCleanupMount.UseVisualStyleBackColor = true;
+            this.btnCleanupMount.Click += new System.EventHandler(this.btnCleanupMount_Click);
             // 
             // label18
             // 
@@ -277,36 +333,6 @@
             this.label18.Size = new System.Drawing.Size(60, 13);
             this.label18.TabIndex = 17;
             this.label18.Text = "Destination";
-            // 
-            // chkCheckIntegrityMount
-            // 
-            this.chkCheckIntegrityMount.AutoSize = true;
-            this.chkCheckIntegrityMount.Location = new System.Drawing.Point(6, 153);
-            this.chkCheckIntegrityMount.Name = "chkCheckIntegrityMount";
-            this.chkCheckIntegrityMount.Size = new System.Drawing.Size(102, 17);
-            this.chkCheckIntegrityMount.TabIndex = 16;
-            this.chkCheckIntegrityMount.Text = "Verifier l\'intégrité";
-            this.chkCheckIntegrityMount.UseVisualStyleBackColor = true;
-            // 
-            // chkOptimizeMount
-            // 
-            this.chkOptimizeMount.AutoSize = true;
-            this.chkOptimizeMount.Location = new System.Drawing.Point(6, 130);
-            this.chkOptimizeMount.Name = "chkOptimizeMount";
-            this.chkOptimizeMount.Size = new System.Drawing.Size(69, 17);
-            this.chkOptimizeMount.TabIndex = 15;
-            this.chkOptimizeMount.Text = "Optimiser";
-            this.chkOptimizeMount.UseVisualStyleBackColor = true;
-            // 
-            // chkReadOnlyMout
-            // 
-            this.chkReadOnlyMout.AutoSize = true;
-            this.chkReadOnlyMout.Location = new System.Drawing.Point(6, 107);
-            this.chkReadOnlyMout.Name = "chkReadOnlyMout";
-            this.chkReadOnlyMout.Size = new System.Drawing.Size(92, 17);
-            this.chkReadOnlyMout.TabIndex = 14;
-            this.chkReadOnlyMout.Text = "Lecture Seule";
-            this.chkReadOnlyMout.UseVisualStyleBackColor = true;
             // 
             // txtMountTo
             // 
@@ -398,6 +424,48 @@
             this.Exporter.TabIndex = 2;
             this.Exporter.Text = "Exporter";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.chkBoot);
+            this.groupBox3.Controls.Add(this.chkVerifyExport);
+            this.groupBox3.Controls.Add(this.btnExport);
+            this.groupBox3.Location = new System.Drawing.Point(596, 31);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(109, 153);
+            this.groupBox3.TabIndex = 13;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Export";
+            // 
+            // chkBoot
+            // 
+            this.chkBoot.AutoSize = true;
+            this.chkBoot.Location = new System.Drawing.Point(6, 130);
+            this.chkBoot.Name = "chkBoot";
+            this.chkBoot.Size = new System.Drawing.Size(68, 17);
+            this.chkBoot.TabIndex = 11;
+            this.chkBoot.Text = "Bootable";
+            this.chkBoot.UseVisualStyleBackColor = true;
+            // 
+            // chkVerifyExport
+            // 
+            this.chkVerifyExport.AutoSize = true;
+            this.chkVerifyExport.Location = new System.Drawing.Point(6, 107);
+            this.chkVerifyExport.Name = "chkVerifyExport";
+            this.chkVerifyExport.Size = new System.Drawing.Size(58, 17);
+            this.chkVerifyExport.TabIndex = 10;
+            this.chkVerifyExport.Text = "Vérifier";
+            this.chkVerifyExport.UseVisualStyleBackColor = true;
+            // 
+            // btnExport
+            // 
+            this.btnExport.Location = new System.Drawing.Point(6, 19);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(98, 82);
+            this.btnExport.TabIndex = 12;
+            this.btnExport.Text = "Exporter";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -442,16 +510,6 @@
             this.cmbCompress.Size = new System.Drawing.Size(121, 21);
             this.cmbCompress.TabIndex = 9;
             // 
-            // chkBoot
-            // 
-            this.chkBoot.AutoSize = true;
-            this.chkBoot.Location = new System.Drawing.Point(6, 130);
-            this.chkBoot.Name = "chkBoot";
-            this.chkBoot.Size = new System.Drawing.Size(68, 17);
-            this.chkBoot.TabIndex = 11;
-            this.chkBoot.Text = "Bootable";
-            this.chkBoot.UseVisualStyleBackColor = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -478,16 +536,6 @@
             0,
             0});
             // 
-            // chkVerifyExport
-            // 
-            this.chkVerifyExport.AutoSize = true;
-            this.chkVerifyExport.Location = new System.Drawing.Point(6, 107);
-            this.chkVerifyExport.Name = "chkVerifyExport";
-            this.chkVerifyExport.Size = new System.Drawing.Size(58, 17);
-            this.chkVerifyExport.TabIndex = 10;
-            this.chkVerifyExport.Text = "Vérifier";
-            this.chkVerifyExport.UseVisualStyleBackColor = true;
-            // 
             // txtExportTo
             // 
             this.txtExportTo.Location = new System.Drawing.Point(121, 128);
@@ -504,16 +552,6 @@
             this.btnExportTo.Text = "Exporter vers";
             this.btnExportTo.UseVisualStyleBackColor = true;
             this.btnExportTo.Click += new System.EventHandler(this.btnExportTo_Click);
-            // 
-            // btnExport
-            // 
-            this.btnExport.Location = new System.Drawing.Point(6, 19);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(98, 82);
-            this.btnExport.TabIndex = 12;
-            this.btnExport.Text = "Exporter";
-            this.btnExport.UseVisualStyleBackColor = true;
-            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // txtExportFrom
             // 
@@ -552,6 +590,37 @@
             this.Splitter.TabIndex = 4;
             this.Splitter.Text = "Splitter";
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.chkVerifySplit);
+            this.groupBox4.Controls.Add(this.btnSplit);
+            this.groupBox4.Location = new System.Drawing.Point(598, 31);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(110, 134);
+            this.groupBox4.TabIndex = 17;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Split";
+            // 
+            // chkVerifySplit
+            // 
+            this.chkVerifySplit.AutoSize = true;
+            this.chkVerifySplit.Location = new System.Drawing.Point(6, 107);
+            this.chkVerifySplit.Name = "chkVerifySplit";
+            this.chkVerifySplit.Size = new System.Drawing.Size(58, 17);
+            this.chkVerifySplit.TabIndex = 12;
+            this.chkVerifySplit.Text = "Vérifier";
+            this.chkVerifySplit.UseVisualStyleBackColor = true;
+            // 
+            // btnSplit
+            // 
+            this.btnSplit.Location = new System.Drawing.Point(6, 19);
+            this.btnSplit.Name = "btnSplit";
+            this.btnSplit.Size = new System.Drawing.Size(98, 82);
+            this.btnSplit.TabIndex = 11;
+            this.btnSplit.Text = "Splitter";
+            this.btnSplit.UseVisualStyleBackColor = true;
+            this.btnSplit.Click += new System.EventHandler(this.btnSplit_Click);
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -587,26 +656,6 @@
             this.label13.Size = new System.Drawing.Size(41, 13);
             this.label13.TabIndex = 13;
             this.label13.Text = "Source";
-            // 
-            // chkVerifySplit
-            // 
-            this.chkVerifySplit.AutoSize = true;
-            this.chkVerifySplit.Location = new System.Drawing.Point(6, 107);
-            this.chkVerifySplit.Name = "chkVerifySplit";
-            this.chkVerifySplit.Size = new System.Drawing.Size(58, 17);
-            this.chkVerifySplit.TabIndex = 12;
-            this.chkVerifySplit.Text = "Vérifier";
-            this.chkVerifySplit.UseVisualStyleBackColor = true;
-            // 
-            // btnSplit
-            // 
-            this.btnSplit.Location = new System.Drawing.Point(6, 19);
-            this.btnSplit.Name = "btnSplit";
-            this.btnSplit.Size = new System.Drawing.Size(98, 82);
-            this.btnSplit.TabIndex = 11;
-            this.btnSplit.Text = "Splitter";
-            this.btnSplit.UseVisualStyleBackColor = true;
-            this.btnSplit.Click += new System.EventHandler(this.btnSplit_Click);
             // 
             // label12
             // 
@@ -891,55 +940,6 @@
             this.btnOpenNewWindow.UseVisualStyleBackColor = true;
             this.btnOpenNewWindow.Click += new System.EventHandler(this.btnOpenNewWindow_Click);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.chkAppendUnmount);
-            this.groupBox1.Controls.Add(this.chkCheckIntegrityUnmount);
-            this.groupBox1.Controls.Add(this.chkCommitUnmount);
-            this.groupBox1.Controls.Add(this.btnUnmout);
-            this.groupBox1.Location = new System.Drawing.Point(310, 200);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(203, 116);
-            this.groupBox1.TabIndex = 24;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Demontage";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btnMount);
-            this.groupBox2.Controls.Add(this.chkCheckIntegrityMount);
-            this.groupBox2.Controls.Add(this.chkOptimizeMount);
-            this.groupBox2.Controls.Add(this.chkReadOnlyMout);
-            this.groupBox2.Location = new System.Drawing.Point(596, 31);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(112, 177);
-            this.groupBox2.TabIndex = 25;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Montage";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.chkBoot);
-            this.groupBox3.Controls.Add(this.chkVerifyExport);
-            this.groupBox3.Controls.Add(this.btnExport);
-            this.groupBox3.Location = new System.Drawing.Point(596, 31);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(109, 153);
-            this.groupBox3.TabIndex = 13;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Export";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.chkVerifySplit);
-            this.groupBox4.Controls.Add(this.btnSplit);
-            this.groupBox4.Location = new System.Drawing.Point(598, 31);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(110, 134);
-            this.groupBox4.TabIndex = 17;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Split";
-            // 
             // GraphDismMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -950,7 +950,9 @@
             this.Controls.Add(this.btnResetOutput);
             this.Controls.Add(this.txtOutput);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "GraphDismMain";
             this.ShowIcon = false;
             this.Text = "GraphDISM by Jules";
@@ -959,26 +961,26 @@
             this.Information.PerformLayout();
             this.mount.ResumeLayout(false);
             this.mount.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbMoutIndex)).EndInit();
             this.Exporter.ResumeLayout(false);
             this.Exporter.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numIndex)).EndInit();
             this.Splitter.ResumeLayout(false);
             this.Splitter.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.addPackage.ResumeLayout(false);
             this.addPackage.PerformLayout();
             this.options.ResumeLayout(false);
             this.options.PerformLayout();
             this.about.ResumeLayout(false);
             this.about.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
