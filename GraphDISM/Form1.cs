@@ -65,62 +65,24 @@ namespace GraphDISM
             ToolTip1.SetToolTip(this.chkUseDism, "Si cochée alors toutes les commandes du programmes seront redirigé vers l'éxécutable séléctionné");
             ToolTip1.SetToolTip(this.label22, "Chalut !");
         }
+
+        /// <summary>
+        /// Execute la commande puis mets a jour txtOutput en fonction du resultat
+        /// prends en compte les paramètres de l'onglet options
+        /// </summary>
+        /// <param name="command">Commande DISM à executer</param>
         public void DISM(string command)
         {
-            ///ANCIEN DISM
-            /*
-            string file = "DISM";
-            string outputTemp;
-            if (chkUseDism.Checked)
-            {
-                file = txtDISMPath.Text;
-            }
-            else
-            {
-                if (File.Exists(@"C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\amd64\DISM\dism.exe"))
-                {
-                    file = @"C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\amd64\DISM\dism.exe";
-                }
-                else
-                {
-                    if (File.Exists(@"C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\x86\DISM\dism.exe"))
-                    {
-                        file = @"C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\x86\DISM\dism.exe";
-                    }
-                }
-            }
-            ProcessStartInfo dismExec = new ProcessStartInfo(file);
-            dismExec.Arguments = command;
-            dismExec.UseShellExecute = false;
-            dismExec.RedirectStandardOutput = true;
-            dismExec.CreateNoWindow = true;
-            dismExec.RedirectStandardInput = true;
-            dismExec.StandardOutputEncoding = Encoding.GetEncoding(850);
-            var proc = Process.Start(dismExec);
-            outputTemp = "**Exécutable lancé** " + file + "\r\n**Commande éxécutée** " + command + proc.StandardOutput.ReadToEnd();
-            return outputTemp;
-            */
-            /// ANCIEN DISM
-
-
-
-
-
-
-
-            /// NOUVEAUX DISM AVEC BACKGROUNDWORKER
-            /// 
             progressBar.Visible = true;
             txtOutput.Text = "";
 
-            // BACKGROUND WORKER !!!!
-
+            // backgroundworker permettant l'execution dans un autre thread
+            //ajoute de la fluidité
             BackgroundWorker bw = new BackgroundWorker();
-            // this allows our worker to report progress during work
             bw.WorkerReportsProgress = true;
             bw.WorkerSupportsCancellation = true;
-
-            // what to do in the background thread
+            
+            //execution de la commande
             bw.DoWork += new DoWorkEventHandler(
                 delegate (object o, DoWorkEventArgs args)
                 {
@@ -128,24 +90,13 @@ namespace GraphDISM
 
                     string file = "DISM";
                     string outputTemp;
+
                     if (chkUseDism.Checked)
                     {
+                        //recupère le chemin de l'executable que l'utilisateur souhaite utiliser
                         file = txtDISMPath.Text;
                     }
-                  /*  else
-                    {
-                        if (File.Exists(@"C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\amd64\DISM\dism.exe"))
-                        {
-                            file = @"C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\amd64\DISM\dism.exe";
-                        }
-                        else
-                        {
-                            if (File.Exists(@"C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\x86\DISM\dism.exe"))
-                            {
-                                file = @"C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\x86\DISM\dism.exe";
-                            }
-                        }
-                    }*/
+
                     ProcessStartInfo dismExec = new ProcessStartInfo(file);
                     dismExec.Arguments = command;
                     dismExec.UseShellExecute = false;
@@ -155,9 +106,10 @@ namespace GraphDISM
                     dismExec.StandardOutputEncoding = Encoding.GetEncoding(850);
                     var proc = Process.Start(dismExec);
                     bw.ReportProgress(1, outputTemp = "**Exécutable lancé** " + file + "\r\n**Commande éxécutée** " + command);
-                    //+ proc.StandardOutput.ReadToEnd();
+
                     while (!proc.StandardOutput.EndOfStream)
                     {
+                        //renvoie la ligne generé par la commande
                         bw.ReportProgress(1,proc.StandardOutput.ReadLine());
                     }
                     
@@ -168,9 +120,11 @@ namespace GraphDISM
             bw.ProgressChanged += new ProgressChangedEventHandler(
                 delegate (object o, ProgressChangedEventArgs args)
                 {
+                    //exemple de retour de progression :
                     //[==========================100.0%==========================] 
                     if (args.UserState.ToString().StartsWith("["))
                     {
+                        //dans ce cas on fait evoluer la progressbar en fonction 
                         progressBar.Style = ProgressBarStyle.Continuous;
                         progressBar.PerformStep();
                     }
@@ -183,10 +137,10 @@ namespace GraphDISM
             bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(
                 delegate (object o, RunWorkerCompletedEventArgs args)
                 {
+                    //reinitialisation de la progressbar
                     progressBar.Value = 0;
                     progressBar.Style = ProgressBarStyle.Marquee;
                     progressBar.Visible = false;
-                    //MessageBox.Show("HELLO !");
 
                     if (txtOutput.Text.Contains("Erreur : "))
                         MessageBox.Show("Attention une erreure s'est produite", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -194,9 +148,9 @@ namespace GraphDISM
                         MessageBox.Show("Commande réalisée\nVoir resultat", "GraphDISM");
                 });
 
+            //execute le background worker en arière plan
             bw.RunWorkerAsync();
 
-            //END BACKGROUND WORKER !!!
             
 
         }
