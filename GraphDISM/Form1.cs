@@ -132,7 +132,7 @@ namespace GraphDISM
                     {
                         file = txtDISMPath.Text;
                     }
-                    else
+                  /*  else
                     {
                         if (File.Exists(@"C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\amd64\DISM\dism.exe"))
                         {
@@ -145,7 +145,7 @@ namespace GraphDISM
                                 file = @"C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\x86\DISM\dism.exe";
                             }
                         }
-                    }
+                    }*/
                     ProcessStartInfo dismExec = new ProcessStartInfo(file);
                     dismExec.Arguments = command;
                     dismExec.UseShellExecute = false;
@@ -168,13 +168,23 @@ namespace GraphDISM
             bw.ProgressChanged += new ProgressChangedEventHandler(
                 delegate (object o, ProgressChangedEventArgs args)
                 {
-                    txtOutput.AppendText(args.UserState.ToString()+"\r\n");
+                    //[==========================100.0%==========================] 
+                    if (args.UserState.ToString().StartsWith("["))
+                    {
+                        progressBar.Style = ProgressBarStyle.Continuous;
+                        progressBar.PerformStep();
+                    }
+                    txtOutput.AppendText(args.UserState.ToString() + "\r\n");
+
+                    
                 });
 
             // what to do when worker completes its task (notify the user)
             bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(
                 delegate (object o, RunWorkerCompletedEventArgs args)
                 {
+                    progressBar.Value = 0;
+                    progressBar.Style = ProgressBarStyle.Marquee;
                     progressBar.Visible = false;
                     //MessageBox.Show("HELLO !");
 
