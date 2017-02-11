@@ -35,24 +35,23 @@
             // txtOutputExt
             // 
             this.txtOutputExt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtOutputExt.Location = new System.Drawing.Point(12, 12);
+            this.txtOutputExt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtOutputExt.Location = new System.Drawing.Point(0, 0);
+            this.txtOutputExt.MaxLength = 999999999;
             this.txtOutputExt.Multiline = true;
             this.txtOutputExt.Name = "txtOutputExt";
             this.txtOutputExt.ReadOnly = true;
             this.txtOutputExt.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtOutputExt.Size = new System.Drawing.Size(529, 602);
+            this.txtOutputExt.Size = new System.Drawing.Size(653, 584);
             this.txtOutputExt.TabIndex = 0;
             // 
             // FormInfoExt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(553, 626);
+            this.ClientSize = new System.Drawing.Size(653, 584);
             this.Controls.Add(this.txtOutputExt);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "FormInfoExt";
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;

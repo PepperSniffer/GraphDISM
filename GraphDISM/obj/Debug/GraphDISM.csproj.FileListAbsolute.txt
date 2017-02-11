@@ -18,3 +18,6 @@ D:\Programing\Git\GraphDISM\GraphDISM\obj\Debug\GraphDISM.GraphDismMain.resource
 D:\Programing\Git\GraphDISM\GraphDISM\obj\Debug\GraphDISM.FormInfoExt.resources
 D:\Programing\Git\GraphDISM\GraphDISM\obj\Debug\GraphDISM.Properties.Resources.resources
 D:\Programing\Git\GraphDISM\GraphDISM\obj\Debug\GraphDISM.csproj.GenerateResource.Cache
+D:\Programing\Git\GraphDISM\GraphDISM\bin\Debug\fr\GraphDISM.resources.dll
+D:\Programing\Git\GraphDISM\GraphDISM\obj\Debug\GraphDISM.GraphDismMain.fr.resources
+D:\Programing\Git\GraphDISM\GraphDISM\obj\Debug\fr\GraphDISM.resources.dll
