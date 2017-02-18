@@ -134,6 +134,9 @@
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
   </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Programateur et chef de projet : Jules GROSPEILLER</value>
+  </data>
   <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
@@ -185,14 +188,17 @@
   <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 13</value>
   </data>
-  <data name="chkVerifySplit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 17</value>
+  <data name="btnCleanupMount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>432, 261</value>
   </data>
   <data name="chkCheckIntegrityUnmount.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="&gt;&gt;chkAppendUnmount.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>Image montée de destination</value>
   </data>
   <data name="cmbCompress.Items1" xml:space="preserve">
     <value>Maximum</value>
@@ -264,8 +270,8 @@
   <data name="&gt;&gt;label22.Name" xml:space="preserve">
     <value>label22</value>
   </data>
-  <data name="groupBox3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Right</value>
+  <data name="&gt;&gt;txtSizeSplit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btnExport.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -306,11 +312,11 @@
   <data name="&gt;&gt;chkOptimizeMount.Parent" xml:space="preserve">
     <value>groupBox2</value>
   </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>about</value>
+  </data>
   <data name="txtSplitTo.Location" type="System.Drawing.Point, System.Drawing">
     <value>121, 128</value>
-  </data>
-  <data name="btnOpenNewWindow.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
   </data>
   <data name="&gt;&gt;btnCleanupMount.Name" xml:space="preserve">
     <value>btnCleanupMount</value>
@@ -321,8 +327,8 @@
   <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Programateur et chef de projet : Jules GROSPEILLER</value>
+  <data name="btnMount.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
   </data>
   <data name="groupBox4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
@@ -350,6 +356,9 @@
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 16</value>
+  </data>
+  <data name="&gt;&gt;chkCommitUnmount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 13</value>
@@ -390,8 +399,8 @@
   <data name="&gt;&gt;btnOpenFileInfo.Name" xml:space="preserve">
     <value>btnOpenFileInfo</value>
   </data>
-  <data name="&gt;&gt;groupBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="txtExportFrom.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
   </data>
   <data name="txtDISMPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>376, 20</value>
@@ -401,6 +410,9 @@
   </data>
   <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="&gt;&gt;chkBoot.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="label22.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -417,14 +429,11 @@
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Index :</value>
+  <data name="chkCheckIntegrityUnmount.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
   </data>
   <data name="&gt;&gt;btnCleanupMount.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="txtExportTo.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
   </data>
   <data name="txtFolderPathPackage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
@@ -500,6 +509,9 @@
   </data>
   <data name="label13.Text" xml:space="preserve">
     <value>Source</value>
+  </data>
+  <data name="&gt;&gt;cmbCompress.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="chkCommitUnmount.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 48</value>
@@ -651,9 +663,6 @@
   <data name="btnMountTo.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 126</value>
   </data>
-  <data name="&gt;&gt;chkVerifySplit.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;btnResetOutput.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
@@ -699,26 +708,17 @@
   <data name="&gt;&gt;label17.Name" xml:space="preserve">
     <value>label17</value>
   </data>
-  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 157</value>
-  </data>
   <data name="chkCommitUnmount.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label20.Name" xml:space="preserve">
-    <value>label20</value>
-  </data>
   <data name="&gt;&gt;btnOpenSplit.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;Information.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="chkVerifySplit.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="btnOpenWimExp.Text" xml:space="preserve">
     <value>Ouvrir WIM/SWM</value>
@@ -755,9 +755,6 @@
   </data>
   <data name="btnGetInfo.Location" type="System.Drawing.Point, System.Drawing">
     <value>269, 47</value>
-  </data>
-  <data name="chkBoot.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
   </data>
   <data name="&gt;&gt;options.Parent" xml:space="preserve">
     <value>tabControl1</value>
@@ -809,6 +806,12 @@
   </data>
   <data name="&gt;&gt;btnGetInfo.Name" xml:space="preserve">
     <value>btnGetInfo</value>
+  </data>
+  <data name="chkVerifySplit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 17</value>
+  </data>
+  <data name="&gt;&gt;btnExport.Name" xml:space="preserve">
+    <value>btnExport</value>
   </data>
   <data name="&gt;&gt;chkCheckIntegrityMount.Parent" xml:space="preserve">
     <value>groupBox2</value>
@@ -960,9 +963,6 @@
   <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
     <value>55, 110</value>
   </data>
-  <data name="label16.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
   <data name="&gt;&gt;chkAppendUnmount.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
@@ -1020,11 +1020,8 @@
   <data name="&gt;&gt;label12.Parent" xml:space="preserve">
     <value>Splitter</value>
   </data>
-  <data name="chkVerifyExport.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkVerifyExport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 107</value>
+  <data name="btnSplit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 82</value>
   </data>
   <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>Exporter</value>
@@ -1080,8 +1077,8 @@
   <data name="label14.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;cmbCompress.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="chkVerifySplit.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Montage</value>
@@ -1152,8 +1149,8 @@
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>504, 13</value>
   </data>
-  <data name="btnSplitTo.Text" xml:space="preserve">
-    <value>Splitter vers</value>
+  <data name="chkBoot.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
   </data>
   <data name="btnPackagesTo.Text" xml:space="preserve">
     <value>Destination</value>
@@ -1161,11 +1158,11 @@
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="chkCheckIntegrityUnmount.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
   <data name="groupBox4.Text" xml:space="preserve">
     <value>Split</value>
+  </data>
+  <data name="&gt;&gt;btnGetInfo.Parent" xml:space="preserve">
+    <value>Information</value>
   </data>
   <data name="&gt;&gt;txtExportTo.Parent" xml:space="preserve">
     <value>Exporter</value>
@@ -1187,537 +1184,6 @@
   </data>
   <data name="about.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
-  </data>
-  <data name="label18.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;label12.Name" xml:space="preserve">
-    <value>label12</value>
-  </data>
-  <data name="&gt;&gt;txtOpenSplit.Name" xml:space="preserve">
-    <value>txtOpenSplit</value>
-  </data>
-  <data name="txtDISMPath.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="options.Size" type="System.Drawing.Size, System.Drawing">
-    <value>633, 331</value>
-  </data>
-  <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 13</value>
-  </data>
-  <data name="chkAppendUnmount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 17</value>
-  </data>
-  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 13</value>
-  </data>
-  <data name="chkBoot.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 130</value>
-  </data>
-  <data name="options.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="label21.Size" type="System.Drawing.Size, System.Drawing">
-    <value>606, 13</value>
-  </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;txtOutput.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnUnmout.Name" xml:space="preserve">
-    <value>btnUnmout</value>
-  </data>
-  <data name="btnMountTo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 23</value>
-  </data>
-  <data name="chkUseDism.Location" type="System.Drawing.Point, System.Drawing">
-    <value>113, 26</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
-    <value>mount</value>
-  </data>
-  <data name="btnGetInfo.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
-  </data>
-  <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnMount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 13</value>
-  </data>
-  <data name="&gt;&gt;txtDISMPath.Parent" xml:space="preserve">
-    <value>options</value>
-  </data>
-  <data name="&gt;&gt;chkOptimizeMount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnExportTo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="txtOpenSplit.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
-  </data>
-  <data name="&gt;&gt;cmbCompress.Name" xml:space="preserve">
-    <value>cmbCompress</value>
-  </data>
-  <data name="chkBoot.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 17</value>
-  </data>
-  <data name="&gt;&gt;btnChoosePackages.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnMount.Name" xml:space="preserve">
-    <value>btnMount</value>
-  </data>
-  <data name="&gt;&gt;groupBox3.Name" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnGetInfo.Parent" xml:space="preserve">
-    <value>Information</value>
-  </data>
-  <data name="btnMount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
-  </data>
-  <data name="chkReadOnlyMout.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="btnUnmout.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="addPackage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="btnUnmout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="&gt;&gt;btnOpenWimExp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnOpenFileInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnMount.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="cbbMoutIndex.Location" type="System.Drawing.Point, System.Drawing">
-    <value>121, 75</value>
-  </data>
-  <data name="label7.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;cbbMoutIndex.Name" xml:space="preserve">
-    <value>cbbMoutIndex</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
-    <value>mount</value>
-  </data>
-  <data name="chkOptimizeMount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 17</value>
-  </data>
-  <data name="txtMountFrom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>545, 20</value>
-  </data>
-  <data name="&gt;&gt;btnSplitTo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="txtExportFrom.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;about.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="btnAddPackage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;btnMountTo.Parent" xml:space="preserve">
-    <value>mount</value>
-  </data>
-  <data name="&gt;&gt;label8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnExportTo.Parent" xml:space="preserve">
-    <value>Exporter</value>
-  </data>
-  <data name="btnMountTo.Text" xml:space="preserve">
-    <value>Dossier de montage</value>
-  </data>
-  <data name="&gt;&gt;chkCheckIntegrityUnmount.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btnMount.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="txtExportFrom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>389, 20</value>
-  </data>
-  <data name="&gt;&gt;btnMountTo.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;chkUseDism.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="btnOpenFileInfo.Text" xml:space="preserve">
-    <value>Ouvrir WIM/SWM</value>
-  </data>
-  <data name="&gt;&gt;txtDISMPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnChoosePackages.Text" xml:space="preserve">
-    <value>Choisir Package(s)</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnOpenNewWindow.Name" xml:space="preserve">
-    <value>btnOpenNewWindow</value>
-  </data>
-  <data name="&gt;&gt;btnMount.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>657, 524</value>
-  </data>
-  <data name="btnOpenFileInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 47</value>
-  </data>
-  <data name="chkVerifySplit.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;btnChoosePackages.Parent" xml:space="preserve">
-    <value>addPackage</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 13</value>
-  </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 13</value>
-  </data>
-  <data name="&gt;&gt;about.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;cbbMoutIndex.Parent" xml:space="preserve">
-    <value>mount</value>
-  </data>
-  <data name="Splitter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>633, 331</value>
-  </data>
-  <data name="&gt;&gt;txtFolderPathPackage.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Source</value>
-  </data>
-  <data name="btnAddPackage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>527, 47</value>
-  </data>
-  <data name="&gt;&gt;numIndex.Name" xml:space="preserve">
-    <value>numIndex</value>
-  </data>
-  <data name="&gt;&gt;btnOpenWimMount.Name" xml:space="preserve">
-    <value>btnOpenWimMount</value>
-  </data>
-  <data name="&gt;&gt;btnMountTo.Name" xml:space="preserve">
-    <value>btnMountTo</value>
-  </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="txtOutput.Size" type="System.Drawing.Size, System.Drawing">
-    <value>800, 169</value>
-  </data>
-  <data name="&gt;&gt;label8.Name" xml:space="preserve">
-    <value>label8</value>
-  </data>
-  <data name="btnSplit.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="chkReadOnlyMout.Text" xml:space="preserve">
-    <value>Lecture Seule</value>
-  </data>
-  <data name="btnOpenNewWindow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 23</value>
-  </data>
-  <data name="&gt;&gt;btnPackagesTo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="chkAppendUnmount.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;numIndex.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="chkReadOnlyMout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 17</value>
-  </data>
-  <data name="btnExport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 82</value>
-  </data>
-  <data name="&gt;&gt;btnGetInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtExportFrom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnPackagesTo.Parent" xml:space="preserve">
-    <value>addPackage</value>
-  </data>
-  <data name="&gt;&gt;txtMountFrom.Parent" xml:space="preserve">
-    <value>mount</value>
-  </data>
-  <data name="addPackage.Text" xml:space="preserve">
-    <value>Ajouter Package</value>
-  </data>
-  <data name="&gt;&gt;btnExport.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>about</value>
-  </data>
-  <data name="btnResetOutput.Location" type="System.Drawing.Point, System.Drawing">
-    <value>695, 35</value>
-  </data>
-  <data name="&gt;&gt;btnMountTo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>516, 31</value>
-  </data>
-  <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
-    <value>76, 77</value>
-  </data>
-  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 13</value>
-  </data>
-  <data name="&gt;&gt;chkVerifyExport.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;options.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="cmbCompress.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="txtPathInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 20</value>
-  </data>
-  <data name="addPackage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>633, 331</value>
-  </data>
-  <data name="label13.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>261, 13</value>
-  </data>
-  <data name="groupBox4.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="txtPathInfo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
-  </data>
-  <data name="&gt;&gt;btnSplit.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="options.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>about</value>
-  </data>
-  <data name="txtPathInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btnMount.Text" xml:space="preserve">
-    <value>Monter</value>
-  </data>
-  <data name="txtDISMPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>249, 24</value>
-  </data>
-  <data name="txtMountFrom.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;chkCheckIntegrityUnmount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtPathInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnSplit.Name" xml:space="preserve">
-    <value>btnSplit</value>
-  </data>
-  <data name="&gt;&gt;btnExportTo.Name" xml:space="preserve">
-    <value>btnExportTo</value>
-  </data>
-  <data name="btnExport.Text" xml:space="preserve">
-    <value>Exporter</value>
-  </data>
-  <data name="mount.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="chkAppendUnmount.Text" xml:space="preserve">
-    <value>Ajoute l'image au lieu de la remplacer</value>
-  </data>
-  <data name="&gt;&gt;chkAppendUnmount.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;txtMountFrom.Name" xml:space="preserve">
-    <value>txtMountFrom</value>
-  </data>
-  <data name="btnPackagesTo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 107</value>
-  </data>
-  <data name="txtMountFrom.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
-  </data>
-  <data name="Exporter.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="label17.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;mount.Name" xml:space="preserve">
-    <value>mount</value>
-  </data>
-  <data name="&gt;&gt;btnOpenSplit.Parent" xml:space="preserve">
-    <value>Splitter</value>
-  </data>
-  <data name="btnUnmout.Text" xml:space="preserve">
-    <value>Demonter</value>
-  </data>
-  <data name="&gt;&gt;btnOpenSplit.Name" xml:space="preserve">
-    <value>btnOpenSplit</value>
-  </data>
-  <data name="about.Text" xml:space="preserve">
-    <value>A propos</value>
-  </data>
-  <data name="&gt;&gt;about.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;chkBoot.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="chkVerifySplit.Text" xml:space="preserve">
-    <value>Vérifier</value>
-  </data>
-  <data name="&gt;&gt;chkCheckIntegrityMount.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>55, 110</value>
-  </data>
-  <data name="&gt;&gt;txtOpenSplit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label20.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;txtFolderPathPackage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtDISMPath.Name" xml:space="preserve">
-    <value>txtDISMPath</value>
-  </data>
-  <data name="tabControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="btnAddPackage.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="txtOpenSplit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>388, 20</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;btnGetInfo.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="chkVerifyExport.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;mount.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="progressBar.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="chkVerifyExport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 17</value>
-  </data>
-  <data name="&gt;&gt;label22.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnCleanupMount.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="&gt;&gt;Splitter.Name" xml:space="preserve">
-    <value>Splitter</value>
-  </data>
-  <data name="&gt;&gt;groupBox4.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="about.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="txtMountFrom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>121, 49</value>
-  </data>
-  <data name="chkUseDism.Text" xml:space="preserve">
-    <value>Utiliser cette version : </value>
-  </data>
-  <data name="btnChooseDismPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 22</value>
-  </data>
-  <data name="label10.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="txtSizeSplit.Text" xml:space="preserve">
-    <value>4096</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2027,6 +1493,537 @@
         8Y+O/x9CZVNOHnbkewAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="label18.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;label12.Name" xml:space="preserve">
+    <value>label12</value>
+  </data>
+  <data name="&gt;&gt;txtOpenSplit.Name" xml:space="preserve">
+    <value>txtOpenSplit</value>
+  </data>
+  <data name="txtDISMPath.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="options.Size" type="System.Drawing.Size, System.Drawing">
+    <value>633, 331</value>
+  </data>
+  <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 13</value>
+  </data>
+  <data name="chkAppendUnmount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 17</value>
+  </data>
+  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 13</value>
+  </data>
+  <data name="chkBoot.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 130</value>
+  </data>
+  <data name="options.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="label21.Size" type="System.Drawing.Size, System.Drawing">
+    <value>606, 13</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;txtOutput.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnUnmout.Name" xml:space="preserve">
+    <value>btnUnmout</value>
+  </data>
+  <data name="btnMountTo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 23</value>
+  </data>
+  <data name="chkUseDism.Location" type="System.Drawing.Point, System.Drawing">
+    <value>113, 26</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>mount</value>
+  </data>
+  <data name="btnGetInfo.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnMount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 13</value>
+  </data>
+  <data name="&gt;&gt;txtDISMPath.Parent" xml:space="preserve">
+    <value>options</value>
+  </data>
+  <data name="&gt;&gt;chkOptimizeMount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnExportTo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="txtOpenSplit.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="&gt;&gt;cmbCompress.Name" xml:space="preserve">
+    <value>cmbCompress</value>
+  </data>
+  <data name="chkBoot.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 17</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Index :</value>
+  </data>
+  <data name="&gt;&gt;btnMount.Name" xml:space="preserve">
+    <value>btnMount</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Name" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="chkVerifyExport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 107</value>
+  </data>
+  <data name="btnMount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 19</value>
+  </data>
+  <data name="chkReadOnlyMout.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnUnmout.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="addPackage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="btnUnmout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="&gt;&gt;btnOpenWimExp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnOpenFileInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnMount.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="cbbMoutIndex.Location" type="System.Drawing.Point, System.Drawing">
+    <value>121, 75</value>
+  </data>
+  <data name="label7.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btnOpenNewWindow.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
+    <value>mount</value>
+  </data>
+  <data name="chkOptimizeMount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 17</value>
+  </data>
+  <data name="txtMountFrom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>545, 20</value>
+  </data>
+  <data name="&gt;&gt;btnSplitTo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnSplitTo.Text" xml:space="preserve">
+    <value>Splitter vers</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;about.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="btnAddPackage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;btnMountTo.Parent" xml:space="preserve">
+    <value>mount</value>
+  </data>
+  <data name="&gt;&gt;label8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnExportTo.Parent" xml:space="preserve">
+    <value>Exporter</value>
+  </data>
+  <data name="btnMountTo.Text" xml:space="preserve">
+    <value>Dossier de montage</value>
+  </data>
+  <data name="&gt;&gt;chkCheckIntegrityUnmount.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;label20.Parent" xml:space="preserve">
+    <value>addPackage</value>
+  </data>
+  <data name="txtExportFrom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>389, 20</value>
+  </data>
+  <data name="&gt;&gt;btnMountTo.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;chkUseDism.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnOpenFileInfo.Text" xml:space="preserve">
+    <value>Ouvrir WIM/SWM</value>
+  </data>
+  <data name="&gt;&gt;txtDISMPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnChoosePackages.Text" xml:space="preserve">
+    <value>Choisir Package(s)</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnOpenNewWindow.Name" xml:space="preserve">
+    <value>btnOpenNewWindow</value>
+  </data>
+  <data name="&gt;&gt;btnMount.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>657, 524</value>
+  </data>
+  <data name="btnOpenFileInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 47</value>
+  </data>
+  <data name="chkVerifySplit.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;btnChoosePackages.Parent" xml:space="preserve">
+    <value>addPackage</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 13</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 13</value>
+  </data>
+  <data name="&gt;&gt;about.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;cbbMoutIndex.Parent" xml:space="preserve">
+    <value>mount</value>
+  </data>
+  <data name="Splitter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>633, 331</value>
+  </data>
+  <data name="&gt;&gt;txtFolderPathPackage.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Source</value>
+  </data>
+  <data name="btnAddPackage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>527, 47</value>
+  </data>
+  <data name="&gt;&gt;numIndex.Name" xml:space="preserve">
+    <value>numIndex</value>
+  </data>
+  <data name="&gt;&gt;btnOpenWimMount.Name" xml:space="preserve">
+    <value>btnOpenWimMount</value>
+  </data>
+  <data name="&gt;&gt;btnMountTo.Name" xml:space="preserve">
+    <value>btnMountTo</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="txtOutput.Size" type="System.Drawing.Size, System.Drawing">
+    <value>800, 169</value>
+  </data>
+  <data name="&gt;&gt;label8.Name" xml:space="preserve">
+    <value>label8</value>
+  </data>
+  <data name="btnSplit.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="btnOpenNewWindow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 23</value>
+  </data>
+  <data name="&gt;&gt;btnPackagesTo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="chkAppendUnmount.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;numIndex.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="chkReadOnlyMout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 17</value>
+  </data>
+  <data name="btnExport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 82</value>
+  </data>
+  <data name="&gt;&gt;btnGetInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtExportFrom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnPackagesTo.Parent" xml:space="preserve">
+    <value>addPackage</value>
+  </data>
+  <data name="&gt;&gt;txtMountFrom.Parent" xml:space="preserve">
+    <value>mount</value>
+  </data>
+  <data name="addPackage.Text" xml:space="preserve">
+    <value>Ajouter Package</value>
+  </data>
+  <data name="&gt;&gt;btnExport.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>about</value>
+  </data>
+  <data name="btnResetOutput.Location" type="System.Drawing.Point, System.Drawing">
+    <value>695, 35</value>
+  </data>
+  <data name="&gt;&gt;btnMountTo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>516, 31</value>
+  </data>
+  <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
+    <value>76, 77</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 13</value>
+  </data>
+  <data name="&gt;&gt;chkVerifyExport.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;options.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="cmbCompress.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="txtPathInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 20</value>
+  </data>
+  <data name="addPackage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>633, 331</value>
+  </data>
+  <data name="label13.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>261, 13</value>
+  </data>
+  <data name="groupBox4.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="txtPathInfo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="&gt;&gt;btnSplit.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="options.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="chkReadOnlyMout.Text" xml:space="preserve">
+    <value>Lecture Seule</value>
+  </data>
+  <data name="txtPathInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnMount.Text" xml:space="preserve">
+    <value>Monter</value>
+  </data>
+  <data name="txtDISMPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>249, 24</value>
+  </data>
+  <data name="txtMountFrom.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;chkCheckIntegrityUnmount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtPathInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSplit.Name" xml:space="preserve">
+    <value>btnSplit</value>
+  </data>
+  <data name="&gt;&gt;btnExportTo.Name" xml:space="preserve">
+    <value>btnExportTo</value>
+  </data>
+  <data name="btnExport.Text" xml:space="preserve">
+    <value>Exporter</value>
+  </data>
+  <data name="mount.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="chkAppendUnmount.Text" xml:space="preserve">
+    <value>Ajoute l'image au lieu de la remplacer</value>
+  </data>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="&gt;&gt;txtMountFrom.Name" xml:space="preserve">
+    <value>txtMountFrom</value>
+  </data>
+  <data name="btnPackagesTo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 107</value>
+  </data>
+  <data name="txtMountFrom.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="label17.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;mount.Name" xml:space="preserve">
+    <value>mount</value>
+  </data>
+  <data name="&gt;&gt;btnOpenSplit.Parent" xml:space="preserve">
+    <value>Splitter</value>
+  </data>
+  <data name="btnUnmout.Text" xml:space="preserve">
+    <value>Demonter</value>
+  </data>
+  <data name="&gt;&gt;btnOpenSplit.Name" xml:space="preserve">
+    <value>btnOpenSplit</value>
+  </data>
+  <data name="about.Text" xml:space="preserve">
+    <value>A propos</value>
+  </data>
+  <data name="&gt;&gt;about.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>42, 157</value>
+  </data>
+  <data name="chkVerifySplit.Text" xml:space="preserve">
+    <value>Vérifier</value>
+  </data>
+  <data name="&gt;&gt;chkCheckIntegrityMount.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>55, 110</value>
+  </data>
+  <data name="&gt;&gt;txtOpenSplit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="chkVerifyExport.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label20.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;txtFolderPathPackage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtDISMPath.Name" xml:space="preserve">
+    <value>txtDISMPath</value>
+  </data>
+  <data name="tabControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="btnAddPackage.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtOpenSplit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>388, 20</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;btnGetInfo.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="chkVerifyExport.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;mount.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="progressBar.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="chkVerifyExport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 17</value>
+  </data>
+  <data name="&gt;&gt;label22.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnCleanupMount.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;Splitter.Name" xml:space="preserve">
+    <value>Splitter</value>
+  </data>
+  <data name="&gt;&gt;chkAppendUnmount.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="about.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="txtMountFrom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>121, 49</value>
+  </data>
+  <data name="chkUseDism.Text" xml:space="preserve">
+    <value>Utiliser cette version : </value>
+  </data>
+  <data name="btnChooseDismPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 22</value>
+  </data>
+  <data name="label10.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtSizeSplit.Text" xml:space="preserve">
+    <value>4096</value>
+  </data>
+  <data name="&gt;&gt;groupBox4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;btnOpenNewWindow.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
@@ -2042,6 +2039,9 @@
   <data name="btnExportTo.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
   </data>
+  <data name="&gt;&gt;btnChoosePackages.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2053,9 +2053,6 @@
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
-  </data>
-  <data name="btnCleanupMount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>432, 261</value>
   </data>
   <data name="&gt;&gt;label5.Name" xml:space="preserve">
     <value>label5</value>
@@ -2072,8 +2069,8 @@
   <data name="&gt;&gt;label3.Parent" xml:space="preserve">
     <value>about</value>
   </data>
-  <data name="Information.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+  <data name="txtExportTo.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
   <data name="txtPathInfo.Location" type="System.Drawing.Point, System.Drawing">
     <value>121, 49</value>
@@ -2086,9 +2083,6 @@
   </data>
   <data name="&gt;&gt;txtSplitTo.ZOrder" xml:space="preserve">
     <value>7</value>
-  </data>
-  <data name="&gt;&gt;label20.Parent" xml:space="preserve">
-    <value>addPackage</value>
   </data>
   <data name="btnMountTo.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -2155,6 +2149,9 @@
   </data>
   <data name="btnAddPackage.Text" xml:space="preserve">
     <value>Ajouter le(s) Package(s)</value>
+  </data>
+  <data name="groupBox3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
   </data>
   <data name="label18.Location" type="System.Drawing.Point, System.Drawing">
     <value>55, 110</value>
@@ -2291,6 +2288,9 @@
   <data name="btnPackagesTo.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 23</value>
   </data>
+  <data name="Information.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
   <data name="btnOpenSplit.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
@@ -2311,9 +2311,6 @@
   </data>
   <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
     <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;txtSizeSplit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
     <value>5</value>
@@ -2354,9 +2351,6 @@
   <data name="txtFolderPathPackage.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="btnSplit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 82</value>
-  </data>
   <data name="&gt;&gt;Splitter.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -2387,6 +2381,9 @@
   <data name="&gt;&gt;label10.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;chkBoot.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="mount.Size" type="System.Drawing.Size, System.Drawing">
     <value>792, 331</value>
   </data>
@@ -2405,6 +2402,9 @@
   <data name="txtSizeSplit.Size" type="System.Drawing.Size, System.Drawing">
     <value>76, 20</value>
   </data>
+  <data name="&gt;&gt;cbbMoutIndex.Name" xml:space="preserve">
+    <value>cbbMoutIndex</value>
+  </data>
   <data name="&gt;&gt;label11.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -2414,11 +2414,11 @@
   <data name="chkReadOnlyMout.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 107</value>
   </data>
-  <data name="&gt;&gt;chkBoot.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="label16.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
   </data>
-  <data name="label20.Text" xml:space="preserve">
-    <value>Image montée de destination</value>
+  <data name="Exporter.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;btnSplit.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2450,8 +2450,8 @@
   <data name="&gt;&gt;btnOpenWimExp.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="&gt;&gt;chkCommitUnmount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;label20.Name" xml:space="preserve">
+    <value>label20</value>
   </data>
   <data name="&gt;&gt;label21.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -2492,8 +2492,8 @@
   <data name="&gt;&gt;label21.Name" xml:space="preserve">
     <value>label21</value>
   </data>
-  <data name="&gt;&gt;btnExport.Name" xml:space="preserve">
-    <value>btnExport</value>
+  <data name="&gt;&gt;chkVerifySplit.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
