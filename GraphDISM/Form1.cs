@@ -29,7 +29,7 @@ namespace GraphDISM
 
             
 
-            System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
+            ToolTip ToolTip1 = new ToolTip();
             ToolTip1.SetToolTip(this.btnResetOutput, "Remet l'affichage des resultats des operations à zero");
             ToolTip1.SetToolTip(this.btnGetInfo, "Permet d'afficher les informations de l'image séléctionnée");
             ToolTip1.SetToolTip(this.txtPathInfo, "Chemin de l'image");
@@ -60,7 +60,9 @@ namespace GraphDISM
             ToolTip1.SetToolTip(this.btnChoosePackages, "Permet de selectionner un ou plusieurs packages windows updates ou autre à ajouter");
             ToolTip1.SetToolTip(this.btnPackagesTo, "Selectionne  le dossier de l'image montée soit la destination des packages séléctionnés");
             ToolTip1.SetToolTip(this.btnAddPackage, "Execute la commande d'ajouts de packages");
-            ToolTip1.SetToolTip(this.btnCleanupMount, "Execute la commande de nettoyage de points de montage \nCela vous permet de supprimer manuellement les dossiers montés \nMais vous empeche de les demonter");
+            ToolTip1.SetToolTip(this.btnCleanupMount, "Execute la commande de nettoyage de points de montage \n" +
+                                                      "Cela vous permet de supprimer manuellement les dossiers montés \n"+
+                                                      "Mais vous empeche de les demonter");
             ToolTip1.SetToolTip(this.btnChooseDismPath, "Vous permet de selectionner un autre executable DISM pour la prise en charge des commandes utilisées par le programme");
             ToolTip1.SetToolTip(this.chkUseDism, "Si cochée alors toutes les commandes du programmes seront redirigé vers l'éxécutable séléctionné");
             ToolTip1.SetToolTip(this.label22, "Chalut !");
@@ -437,7 +439,9 @@ namespace GraphDISM
 
         private void btnCleanupMount_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Attention vous êtes sur le point de nettoyer les points de montages de vos images. Après cette action vos images montées ne seronts plus demontables\nVoulez-vous continuer ?", "Attention !", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show("Attention vous êtes sur le point de nettoyer les points de montages de vos images.\n"+
+                                                  "Après cette action vos images montées ne seronts plus demontables\n" +
+                                                  "Voulez-vous continuer ?", "Attention !", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
                 string command = "/Cleanup-Mountpoints";
@@ -461,6 +465,12 @@ namespace GraphDISM
         {
             Form FormInfoExt = new FormInfoExt(txtOutput.Text);
             FormInfoExt.Show();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //renvoi ver le lien github
+            Process.Start("https://github.com/PepperSniffer/GraphDISM");
         }
     }
 }

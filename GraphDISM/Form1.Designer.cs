@@ -108,6 +108,7 @@
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.btnOpenNewWindow = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.linkToGitHub = new System.Windows.Forms.LinkLabel();
             this.tabControl1.SuspendLayout();
             this.Information.SuspendLayout();
             this.mount.SuspendLayout();
@@ -841,6 +842,7 @@
             // about
             // 
             this.about.BackColor = System.Drawing.Color.DarkGray;
+            this.about.Controls.Add(this.linkToGitHub);
             this.about.Controls.Add(this.label22);
             this.about.Controls.Add(this.label8);
             this.about.Controls.Add(this.label6);
@@ -866,7 +868,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 293);
+            this.label8.Location = new System.Drawing.Point(3, 288);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(505, 13);
             this.label8.TabIndex = 7;
@@ -974,6 +976,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(740, 70);
             this.panel1.TabIndex = 5;
+            // 
+            // linkToGitHub
+            // 
+            this.linkToGitHub.AutoSize = true;
+            this.linkToGitHub.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkToGitHub.Location = new System.Drawing.Point(3, 275);
+            this.linkToGitHub.Name = "linkToGitHub";
+            this.linkToGitHub.Size = new System.Drawing.Size(66, 13);
+            this.linkToGitHub.TabIndex = 9;
+            this.linkToGitHub.TabStop = true;
+            this.linkToGitHub.Text = "Page Github";
+            this.linkToGitHub.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // GraphDismMain
             // 
@@ -1100,6 +1114,7 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnResetOutput;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.LinkLabel linkToGitHub;
     }
 }
 
